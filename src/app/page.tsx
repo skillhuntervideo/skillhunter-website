@@ -11,14 +11,52 @@ import {
   Building2,
   User,
   Quote,
+  Menu,
 } from "lucide-react";
 
 export default function Page() {
   return (
     <main className="min-h-screen bg-white">
+      {/* ─── NAV ─── */}
+      <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#1a1a2e]/95 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-3">
+          <img
+            src="/images/logo_wh.png"
+            alt="Skill Hunter"
+            className="h-8"
+          />
+          <div className="hidden sm:flex items-center gap-6">
+            <a href="#courses" className="text-sm text-white/60 hover:text-white transition-colors">
+              コース
+            </a>
+            <a href="#about" className="text-sm text-white/60 hover:text-white transition-colors">
+              About
+            </a>
+            <a href="#plans" className="text-sm text-white/60 hover:text-white transition-colors">
+              プラン
+            </a>
+            <a href="https://login.skillhunter.jp" target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-white transition-colors">
+              ログイン
+            </a>
+            <Button size="sm" asChild className="bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold">
+              <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">無料体験</a>
+            </Button>
+          </div>
+          <Button variant="ghost" size="icon" className="sm:hidden text-white">
+            <Menu className="size-5" />
+          </Button>
+        </div>
+      </nav>
+
       {/* ─── SECTION 1: HERO ─── */}
       <section className="relative overflow-hidden bg-[#1a1a2e] text-white">
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] opacity-90" />
+        {/* Hero background image */}
+        <img
+          src="/images/point_01.jpg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-luminosity"
+        />
         <div className="relative mx-auto max-w-5xl px-6 py-24 sm:py-32 lg:py-40">
           <div className="max-w-3xl">
             <h1 className="text-3xl font-bold tracking-tight sm:text-5xl lg:text-6xl leading-tight">
@@ -36,11 +74,11 @@ export default function Page() {
               Not a textbook. Not a classroom. Staff learn English the way you absorb a Netflix series — by living inside the story. Every course is built around real hotel situations, so the language transfers to real shifts.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-8 h-12">
-                7日間無料体験 — 7-Day Free Trial
+              <Button size="lg" asChild className="bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-8 h-12">
+                <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">14日間無料体験 — 14-Day Free Trial</a>
               </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-base px-8 h-12">
-                ホテル法人プランを見る — Corporate Plan
+              <Button size="lg" asChild className="border border-white/30 bg-transparent text-white hover:bg-white/10 text-base px-8 h-12">
+                <a href="#contact">法人のお問い合わせ — Corporate Inquiry</a>
               </Button>
             </div>
           </div>
@@ -57,15 +95,29 @@ export default function Page() {
             Trusted by major global hotel brands
           </p>
 
-          {/* Logo placeholders */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-40">
-            {["Hilton", "Marriott", "Aman", "Conrad", "Prince"].map((name) => (
-              <div
-                key={name}
-                className="flex h-10 items-center px-4 text-lg font-semibold tracking-wide text-gray-400"
-              >
-                {name}
-              </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-10 sm:gap-14">
+            {[
+              { src: "/images/logos/hilton.svg", alt: "Hilton", h: "h-5" },
+              { src: "/images/logos/conrad.svg", alt: "Conrad", h: "h-4" },
+              { type: "text", text: "JANU", alt: "Janu" },
+              { src: "/images/logos/marriott.svg", alt: "Marriott", h: "h-5" },
+              { src: "/images/logos/prince.svg", alt: "Prince Hotels", h: "h-5" },
+            ].map((logo) => (
+              "type" in logo && logo.type === "text" ? (
+                <span
+                  key={logo.alt}
+                  className="text-lg font-light tracking-[0.3em] text-gray-800 opacity-40"
+                >
+                  {logo.text}
+                </span>
+              ) : (
+                <img
+                  key={logo.alt}
+                  src={"src" in logo ? logo.src : ""}
+                  alt={logo.alt}
+                  className={`${"h" in logo ? logo.h : "h-5"} w-auto opacity-40 grayscale`}
+                />
+              )
             ))}
           </div>
 
@@ -129,19 +181,29 @@ export default function Page() {
       {/* ─── SECTION 4: THE METHOD ─── */}
       <section className="bg-[#1a1a2e] py-16 sm:py-24 text-white">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="max-w-3xl">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              ドラマを観るように、英語を覚える。
-            </h2>
-            <p className="mt-2 text-base text-white/60">
-              Learning English like watching a drama series.
-            </p>
-            <p className="mt-6 text-base leading-relaxed text-white/80">
-              Netflixで映画を観るように、英語が身につく。スタッフはストーリーの中の登場人物を追いかけながら、自然に英語を吸収していきます。「次どうなるんだろう？」と思いながら、気づいたら英語が口から出ている。それがSkill Hunterのメソッドです。
-            </p>
-            <p className="mt-2 text-sm text-white/50">
-              Staff follow a story. Real characters, real hotel situations. They absorb the language naturally — the same way you pick up phrases from a show you love. No memorisation drills. No grammar tables. Just immersion that actually works.
-            </p>
+          <div className="grid gap-12 sm:grid-cols-[1fr_320px] items-center">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                ドラマを観るように、英語を覚える。
+              </h2>
+              <p className="mt-2 text-base text-white/60">
+                Learning English like watching a drama series.
+              </p>
+              <p className="mt-6 text-base leading-relaxed text-white/80">
+                Netflixで映画を観るように、英語が身につく。スタッフはストーリーの中の登場人物を追いかけながら、自然に英語を吸収していきます。「次どうなるんだろう？」と思いながら、気づいたら英語が口から出ている。それがSkill Hunterのメソッドです。
+              </p>
+              <p className="mt-2 text-sm text-white/50">
+                Staff follow a story. Real characters, real hotel situations. They absorb the language naturally — the same way you pick up phrases from a show you love. No memorisation drills. No grammar tables. Just immersion that actually works.
+              </p>
+            </div>
+            {/* Instructor screenshot */}
+            <div className="hidden sm:block">
+              <img
+                src="/images/point_02.jpg"
+                alt="Skill Hunter lesson — speaking time"
+                className="rounded-xl border border-white/10 shadow-2xl"
+              />
+            </div>
           </div>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2">
@@ -176,7 +238,7 @@ export default function Page() {
       </section>
 
       {/* ─── SECTION 5: COURSE TRACKS ─── */}
-      <section className="py-16 sm:py-24">
+      <section id="courses" className="py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-6">
           <div className="max-w-3xl">
             <h2 className="text-xl font-bold tracking-tight sm:text-2xl text-[#1a1a2e]">
@@ -191,6 +253,7 @@ export default function Page() {
             {[
               {
                 icon: Monitor,
+                image: "/images/course_01.jpg",
                 title: "フロントデスク",
                 titleEn: "Front Desk",
                 jp: "チェックイン・チェックアウトを英語でスムーズに対応",
@@ -198,6 +261,7 @@ export default function Page() {
               },
               {
                 icon: UtensilsCrossed,
+                image: "/images/course_02.jpg",
                 title: "レストラン",
                 titleEn: "Restaurant",
                 jp: "英語メニューの説明、注文対応、アレルギーへの対応を自信を持って",
@@ -205,6 +269,7 @@ export default function Page() {
               },
               {
                 icon: Phone,
+                image: "/images/course_03.jpg",
                 title: "電話対応",
                 titleEn: "Phone Calls",
                 jp: "予約・問い合わせ・クレームを電話で英語対応",
@@ -212,6 +277,7 @@ export default function Page() {
               },
               {
                 icon: ConciergeBell,
+                image: "/images/course_04.jpg",
                 title: "コンシェルジュ",
                 titleEn: "Concierge",
                 jp: "観光案内・交通情報・おすすめスポットを英語で案内",
@@ -219,14 +285,24 @@ export default function Page() {
               },
               {
                 icon: Mail,
+                image: "/images/business_email.png",
                 title: "ビジネスメール",
                 titleEn: "Business Emails",
                 jp: "予約確認・クレーム対応・提案を英語メールで対応",
                 en: "Staff write professional English emails — reservations, complaints, follow-ups.",
               },
             ].map((course, i) => (
-              <Card key={i} className="group hover:shadow-md transition-shadow">
-                <CardContent className="pt-6">
+              <Card key={i} className="group hover:shadow-md transition-shadow overflow-hidden">
+                {course.image && (
+                  <div className="h-40 overflow-hidden">
+                    <img
+                      src={course.image}
+                      alt={course.titleEn}
+                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+                <CardContent className="pt-5">
                   <div className="flex items-center gap-3">
                     <div className="flex size-10 items-center justify-center rounded-lg bg-[#1a1a2e] text-[#c9a03c]">
                       <course.icon className="size-5" />
@@ -261,8 +337,8 @@ export default function Page() {
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2">
             {/* Testimonial 1 */}
-            <Card className="bg-white">
-              <CardContent className="pt-6">
+            <Card className="bg-white flex flex-col">
+              <CardContent className="pt-6 flex flex-col flex-1">
                 <Quote className="size-6 text-[#c9a03c] mb-3" />
                 <p className="text-sm leading-relaxed text-foreground/90">
                   「難しくて途中でやめてしまうことが多かったけど、このコースは続けられました。気づいたら英語が出てくるようになっていて、自分でもびっくりしています。」
@@ -270,21 +346,25 @@ export default function Page() {
                 <p className="mt-3 text-xs text-muted-foreground leading-relaxed italic">
                   &ldquo;Most English courses I&apos;ve tried, I quit halfway through. This one I actually finished. Then started again. I&apos;m genuinely surprised at how naturally the words come out now.&rdquo;
                 </p>
-                <div className="mt-4 flex items-center gap-2 border-t pt-4">
-                  <div className="flex size-8 items-center justify-center rounded-full bg-[#1a1a2e] text-xs text-white font-semibold">
-                    A
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium">Airi</p>
-                    <p className="text-xs text-muted-foreground">20代 / Individual learner</p>
+                <div className="mt-auto pt-4">
+                  <div className="flex items-center gap-2 border-t pt-4">
+                    <img
+                      src="/images/airi_avatar.jpg"
+                      alt="Airi"
+                      className="size-8 rounded-full object-cover"
+                    />
+                    <div>
+                      <p className="text-sm font-medium">Airi</p>
+                      <p className="text-xs text-muted-foreground">20代 / Individual learner</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Testimonial 2 */}
-            <Card className="bg-white">
-              <CardContent className="pt-6">
+            <Card className="bg-white flex flex-col">
+              <CardContent className="pt-6 flex flex-col flex-1">
                 <Quote className="size-6 text-[#c9a03c] mb-3" />
                 <p className="text-sm leading-relaxed text-foreground/90">
                   「教科書っぽくなくて、自然に英語が頭に入ってくる感じがします。仕事でも少しずつ英語を使えるようになってきました。」
@@ -292,52 +372,86 @@ export default function Page() {
                 <p className="mt-3 text-xs text-muted-foreground leading-relaxed italic">
                   &ldquo;It doesn&apos;t feel like studying. The English just goes in. I&apos;ve started using it at work — small things, but real things. That hasn&apos;t happened with anything else I&apos;ve tried.&rdquo;
                 </p>
-                <div className="mt-4 flex items-center gap-2 border-t pt-4">
-                  <div className="flex size-8 items-center justify-center rounded-full bg-[#1a1a2e] text-xs text-white font-semibold">
-                    N
+                <div className="mt-auto pt-4">
+                  <div className="flex items-center gap-2 border-t pt-4">
+                    <img
+                      src="/images/naoki_avatar.jpg"
+                      alt="Naoki"
+                      className="size-8 rounded-full object-cover"
+                    />
+                    <div>
+                      <p className="text-sm font-medium">Naoki</p>
+                      <p className="text-xs text-muted-foreground">30代 / Individual learner</p>
+                    </div>
                   </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Testimonial 3 — Chihiro from old site */}
+            <Card className="bg-white sm:col-span-2">
+              <CardContent className="pt-6">
+                <Quote className="size-6 text-[#c9a03c] mb-3" />
+                <p className="text-sm leading-relaxed text-foreground/90">
+                  「クスッと笑える動画を見ながら楽しく英語力を伸ばすことができる一押しのコンテンツです。分からない語句や言い回しの質疑応答も丁寧で、サポート体制もバッチリ！」
+                </p>
+                <p className="mt-3 text-xs text-muted-foreground leading-relaxed italic">
+                  &ldquo;A top-recommended platform where you can enjoy improving your English while watching videos that make you chuckle. The Q&amp;A on unclear phrases is thorough, and the support system is great!&rdquo;
+                </p>
+                <div className="mt-4 flex items-center gap-2 border-t pt-4">
+                  <img
+                    src="/images/chihiro_avatar.jpg"
+                    alt="Chihiro F."
+                    className="size-8 rounded-full object-cover"
+                  />
                   <div>
-                    <p className="text-sm font-medium">Naoki</p>
-                    <p className="text-xs text-muted-foreground">30代 / Individual learner</p>
+                    <p className="text-sm font-medium">Chihiro F.</p>
+                    <p className="text-xs text-muted-foreground">ホテル・スタッフ / Hotel Staff</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* HR Manager placeholder */}
-          <div className="mt-6 rounded-lg border border-dashed border-muted-foreground/20 bg-white/50 p-6 text-center">
-            <p className="text-sm text-muted-foreground">
-              ホテルHRマネージャーの声 — 近日公開
-            </p>
-            <p className="text-xs text-muted-foreground/60 mt-1">
-              Hotel HR Manager testimonial — coming soon
-            </p>
+          {/* Community screenshot */}
+          <div className="mt-12 rounded-xl overflow-hidden border shadow-sm">
+            <img
+              src="/images/point_03.jpg"
+              alt="Skill Hunter community — Q&A with students and instructors"
+              className="w-full"
+            />
+            <div className="bg-white px-6 py-4">
+              <p className="text-sm font-medium text-[#1a1a2e]">コミュニティサポート</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Students interact directly with instructors — questions get answered, progress gets supported.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ─── SECTION 7: ANDREW'S STORY ─── */}
-      <section className="py-16 sm:py-24">
+      <section id="about" className="py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-6">
           <div className="grid gap-12 sm:grid-cols-[280px_1fr] items-start">
-            {/* Photo placeholder */}
-            <div className="mx-auto sm:mx-0 flex size-64 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1a1a2e] to-[#16213e] text-white">
-              <div className="text-center">
-                <User className="mx-auto size-16 opacity-40" />
-                <p className="mt-2 text-xs opacity-40">Photo</p>
-              </div>
+            {/* Andrew photo */}
+            <div className="mx-auto sm:mx-0">
+              <img
+                src="/images/Andrew%20Conrad.JPG"
+                alt="Andrew Gibler — Skill Hunter founder"
+                className="w-64 h-auto rounded-2xl object-cover shadow-lg"
+              />
             </div>
 
             <div>
               <Badge variant="secondary" className="mb-4 text-[#c9a03c] bg-[#c9a03c]/10">
-                About the founder
+                About Andrew
               </Badge>
               <p className="text-base leading-relaxed text-foreground/90">
                 2009年、英語だけを持って日本へ来ました。日本語はゼロ。でも4年も経たないうちに、広島東洋カープの通訳になっていました。使ったのは教科書でも語学スクールでもなく、没入型の学習——物語の中に飛び込み、自然に言語を吸収する方法です。Skill Hunterのコースは、その方法をそのまま英語学習に応用したものです。
               </p>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                I moved to Japan in 2009 with zero Japanese. No textbooks, no language school — just immersion. Within four years, I was interpreting for the Hiroshima Toyo Carp in NPB professional baseball. Skill Hunter is that same method, built for hotel staff learning English. I know it works because I lived it in the other direction.
+                I moved to Japan in 2009 with zero Japanese. No language school — just immersion. Within four years, I was interpreting for the Hiroshima Toyo Carp in NPB professional baseball. Skill Hunter is that same method, built for hotel staff learning English. I know it works because I lived it in the other direction.
               </p>
             </div>
           </div>
@@ -345,7 +459,7 @@ export default function Page() {
       </section>
 
       {/* ─── SECTION 8: TWO-PATH CTA ─── */}
-      <section className="bg-[#fafaf8] py-16 sm:py-24 border-y">
+      <section id="plans" className="bg-[#fafaf8] py-16 sm:py-24 border-y">
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl text-[#1a1a2e]">
             どちらのプランをお探しですか？
@@ -370,8 +484,8 @@ export default function Page() {
                 <p className="mt-2 text-xs text-muted-foreground">
                   Annual contract, flexible monthly seat adjustments, tiered pricing by team size. Trusted by hotels across Japan.
                 </p>
-                <Button className="mt-6 w-full bg-[#1a1a2e] text-white hover:bg-[#1a1a2e]/90 h-11">
-                  法人プランを見る — View Corporate Plan
+                <Button asChild className="mt-6 w-full bg-[#1a1a2e] text-white hover:bg-[#1a1a2e]/90 h-11">
+                  <a href="#contact">法人のお問い合わせ — Inquire About Corporate Plans</a>
                 </Button>
               </CardContent>
             </Card>
@@ -390,8 +504,8 @@ export default function Page() {
                 <p className="mt-2 text-xs text-muted-foreground">
                   Self-paced, fully online, available anywhere. Monthly subscription. Start today.
                 </p>
-                <Button variant="outline" className="mt-6 w-full h-11">
-                  個人プランを見る — View Individual Plan
+                <Button asChild variant="outline" className="mt-6 w-full h-11 border-[#1a1a2e] text-[#1a1a2e] hover:bg-[#1a1a2e] hover:text-white">
+                  <a href="https://skillhunter.jp/a1checkout-4" target="_blank" rel="noopener noreferrer">個人プランに申し込む — Sign Up for Individual Plan</a>
                 </Button>
               </CardContent>
             </Card>
@@ -399,17 +513,118 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ─── CORPORATE INQUIRY FORM ─── */}
+      <section id="contact" className="py-16 sm:py-24">
+        <div className="mx-auto max-w-2xl px-6">
+          <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl text-[#1a1a2e]">
+            法人のお問い合わせ
+          </h2>
+          <p className="mt-2 text-center text-base text-muted-foreground">
+            Inquire about corporate plans for your hotel
+          </p>
+
+          <form
+            action="https://formspree.io/f/xplaceholder"
+            method="POST"
+            className="mt-10 space-y-6"
+          >
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-[#1a1a2e]">
+                お名前 <span className="text-muted-foreground font-normal">/ Name</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                className="mt-1.5 block w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-foreground shadow-sm focus:border-[#c9a03c] focus:outline-none focus:ring-1 focus:ring-[#c9a03c]"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="hotel" className="block text-sm font-medium text-[#1a1a2e]">
+                ホテル名 <span className="text-muted-foreground font-normal">/ Hotel Name</span>
+              </label>
+              <input
+                type="text"
+                id="hotel"
+                name="hotel"
+                required
+                className="mt-1.5 block w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-foreground shadow-sm focus:border-[#c9a03c] focus:outline-none focus:ring-1 focus:ring-[#c9a03c]"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-[#1a1a2e]">
+                ご希望の連絡方法 <span className="text-muted-foreground font-normal">/ Preferred Contact Method</span>
+              </label>
+              <div className="mt-2 flex gap-6">
+                <label className="flex items-center gap-2 text-sm">
+                  <input type="radio" name="contact_method" value="email" defaultChecked className="accent-[#c9a03c]" />
+                  メール / Email
+                </label>
+                <label className="flex items-center gap-2 text-sm">
+                  <input type="radio" name="contact_method" value="phone" className="accent-[#c9a03c]" />
+                  電話 / Phone
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-[#1a1a2e]">
+                メールアドレス <span className="text-muted-foreground font-normal">/ Email</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="mt-1.5 block w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-foreground shadow-sm focus:border-[#c9a03c] focus:outline-none focus:ring-1 focus:ring-[#c9a03c]"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-[#1a1a2e]">
+                電話番号 <span className="text-muted-foreground font-normal">/ Phone (optional)</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                className="mt-1.5 block w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-foreground shadow-sm focus:border-[#c9a03c] focus:outline-none focus:ring-1 focus:ring-[#c9a03c]"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-[#1a1a2e]">
+                メッセージ <span className="text-muted-foreground font-normal">/ Message (optional)</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={3}
+                className="mt-1.5 block w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-foreground shadow-sm focus:border-[#c9a03c] focus:outline-none focus:ring-1 focus:ring-[#c9a03c] resize-none"
+              />
+            </div>
+
+            <Button type="submit" className="w-full bg-[#1a1a2e] text-white hover:bg-[#1a1a2e]/90 h-12 text-base">
+              送信する — Submit Inquiry
+            </Button>
+          </form>
+        </div>
+      </section>
+
       {/* ─── SECTION 9: FOOTER CTA ─── */}
       <section className="bg-[#1a1a2e] py-16 sm:py-24 text-white">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <h2 className="text-2xl font-bold tracking-tight sm:text-4xl">
-            まずは7日間、無料で試してみてください。
+            まずは14日間、無料で試してみてください。
           </h2>
           <p className="mt-2 text-lg text-white/60">
-            Try it free for 7 days. No commitment.
+            Try it free for 14 days. No commitment.
           </p>
-          <Button size="lg" className="mt-8 bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-10 h-12">
-            無料体験を始める — Start Your Free Trial
+          <Button size="lg" asChild className="mt-8 bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-10 h-12">
+            <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">無料体験を始める — Start Your Free Trial</a>
           </Button>
           <p className="mt-4 text-sm text-white/40">
             クレジットカード不要。いつでもキャンセル可能。
@@ -421,23 +636,64 @@ export default function Page() {
       </section>
 
       {/* ─── FOOTER ─── */}
-      <footer className="border-t py-8">
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <p className="text-sm text-muted-foreground">
-            外国人スタッフの日本語学習はこちら →{" "}
-            <a href="https://comedyjapanese.com" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">
-              comedyjapanese.com
+      <footer className="border-t bg-[#fafaf8] py-10">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="grid gap-8 sm:grid-cols-3">
+            <div>
+              <img src="/images/logo_wh.png" alt="Skill Hunter" className="h-6 brightness-0" />
+              <p className="mt-3 text-xs text-muted-foreground leading-relaxed">
+                ホテルスタッフのための英語学習プラットフォーム
+              </p>
+            </div>
+            <div>
+              <p className="font-semibold text-sm text-[#1a1a2e]">リンク</p>
+              <ul className="mt-2 space-y-1.5">
+                <li>
+                  <a href="https://skillhunter.jp" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                    skillhunter.jp
+                  </a>
+                </li>
+                <li>
+                  <a href="https://comedyjapanese.com" className="text-xs text-muted-foreground hover:text-foreground transition-colors" target="_blank" rel="noopener noreferrer">
+                    comedyjapanese.com — 外国人スタッフの日本語学習
+                  </a>
+                </li>
+                <li>
+                  <a href="https://skillhunter.jp/inquiry678052" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                    お問い合わせ / Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold text-sm text-[#1a1a2e]">法的情報</p>
+              <ul className="mt-2 space-y-1.5">
+                <li>
+                  <a href="https://skillhunter.jp/trade-law" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                    特定商取引法に基づく表記
+                  </a>
+                </li>
+                <li>
+                  <a href="https://skillhunter.jp/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                    利用規約 / Terms
+                  </a>
+                </li>
+                <li>
+                  <a href="https://skillhunter.jp/privacy-policy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                    プライバシーポリシー / Privacy
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 border-t pt-6 flex items-center justify-between">
+            <p className="text-xs text-muted-foreground/40">
+              &copy; {new Date().getFullYear()} Skill Hunter English
+            </p>
+            <a href="https://login.skillhunter.jp" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+              会員ログイン / Member Login
             </a>
-          </p>
-          <p className="mt-1 text-xs text-muted-foreground/60">
-            For foreign staff learning Japanese →{" "}
-            <a href="https://comedyjapanese.com" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">
-              comedyjapanese.com
-            </a>
-          </p>
-          <p className="mt-6 text-xs text-muted-foreground/40">
-            &copy; {new Date().getFullYear()} Skill Hunter English
-          </p>
+          </div>
         </div>
       </footer>
     </main>
