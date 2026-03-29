@@ -585,7 +585,13 @@ export default function ComparePage() {
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                 you prefer a Japanese-headquartered provider and group lessons
                 work for your team&apos;s schedule. Good for general English
-                improvement, less effective for hospitality-specific outcomes.
+                improvement, less effective for hospitality-specific outcomes.{" "}
+                <a
+                  href="/compare/ecc"
+                  className="text-[#c9a03c] hover:underline font-medium"
+                >
+                  See our full ECC comparison &rarr;
+                </a>
               </p>
             </div>
             <div>
@@ -596,7 +602,13 @@ export default function ComparePage() {
                 you&apos;re sponsoring individual high-performers (e.g., a
                 front-desk lead or guest relations manager) rather than training
                 a whole team. Excellent 1-on-1 instruction, but doesn&apos;t
-                scale.
+                scale.{" "}
+                <a
+                  href="/compare/gaba"
+                  className="text-[#c9a03c] hover:underline font-medium"
+                >
+                  See our full GABA comparison &rarr;
+                </a>
               </p>
             </div>
             <div>
