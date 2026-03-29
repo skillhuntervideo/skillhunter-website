@@ -524,95 +524,13 @@ export default function Page() {
             Inquire about corporate plans for your hotel
           </p>
 
-          <form
-            action="https://formspree.io/f/xeepaewl"
-            method="POST"
-            className="mt-10 space-y-6"
-          >
-            <input type="hidden" name="_cc" value="robert@skillhunter.jp" />
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-[#1a1a2e]">
-                お名前 <span className="text-muted-foreground font-normal">/ Name</span>
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="mt-1.5 block w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-foreground shadow-sm focus:border-[#c9a03c] focus:outline-none focus:ring-1 focus:ring-[#c9a03c]"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="hotel" className="block text-sm font-medium text-[#1a1a2e]">
-                ホテル名 <span className="text-muted-foreground font-normal">/ Hotel Name</span>
-              </label>
-              <input
-                type="text"
-                id="hotel"
-                name="hotel"
-                required
-                className="mt-1.5 block w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-foreground shadow-sm focus:border-[#c9a03c] focus:outline-none focus:ring-1 focus:ring-[#c9a03c]"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-[#1a1a2e]">
-                ご希望の連絡方法 <span className="text-muted-foreground font-normal">/ Preferred Contact Method</span>
-              </label>
-              <div className="mt-2 flex gap-6">
-                <label className="flex items-center gap-2 text-sm">
-                  <input type="radio" name="contact_method" value="email" defaultChecked className="accent-[#c9a03c]" />
-                  メール / Email
-                </label>
-                <label className="flex items-center gap-2 text-sm">
-                  <input type="radio" name="contact_method" value="phone" className="accent-[#c9a03c]" />
-                  電話 / Phone
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-[#1a1a2e]">
-                メールアドレス <span className="text-muted-foreground font-normal">/ Email</span>
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="mt-1.5 block w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-foreground shadow-sm focus:border-[#c9a03c] focus:outline-none focus:ring-1 focus:ring-[#c9a03c]"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-[#1a1a2e]">
-                電話番号 <span className="text-muted-foreground font-normal">/ Phone (optional)</span>
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                className="mt-1.5 block w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-foreground shadow-sm focus:border-[#c9a03c] focus:outline-none focus:ring-1 focus:ring-[#c9a03c]"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-[#1a1a2e]">
-                メッセージ <span className="text-muted-foreground font-normal">/ Message (optional)</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={3}
-                className="mt-1.5 block w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-foreground shadow-sm focus:border-[#c9a03c] focus:outline-none focus:ring-1 focus:ring-[#c9a03c] resize-none"
-              />
-            </div>
-
-            <Button type="submit" className="w-full bg-[#1a1a2e] text-white hover:bg-[#1a1a2e]/90 h-12 text-base">
-              送信する — Submit Inquiry
+          <div className="mt-10 text-center">
+            <Button asChild className="bg-[#1a1a2e] text-white hover:bg-[#1a1a2e]/90 h-12 px-8 text-base">
+              <a href="https://skillhunter.jp/inquiry678052" target="_blank" rel="noopener noreferrer">
+                お問い合わせフォームへ — Go to Inquiry Form
+              </a>
             </Button>
-          </form>
+          </div>
         </div>
       </section>
 
