@@ -100,6 +100,7 @@ export default function Page() {
               { src: "/images/logos/hilton.svg", alt: "Hilton", h: "h-5" },
               { src: "/images/logos/conrad.svg", alt: "Conrad", h: "h-4" },
               { type: "text", text: "JANU", alt: "Janu" },
+              { src: "/images/logos/waldorf_mark.svg", alt: "Waldorf Astoria", h: "h-10" },
               { src: "/images/logos/marriott.svg", alt: "Marriott", h: "h-5" },
               { src: "/images/logos/prince.svg", alt: "Prince Hotels", h: "h-5" },
             ].map((logo) => (
@@ -524,10 +525,11 @@ export default function Page() {
           </p>
 
           <form
-            action="https://formspree.io/f/xplaceholder"
+            action="https://formspree.io/f/xeepaewl"
             method="POST"
             className="mt-10 space-y-6"
           >
+            <input type="hidden" name="_cc" value="robert@skillhunter.jp" />
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-[#1a1a2e]">
                 お名前 <span className="text-muted-foreground font-normal">/ Name</span>
@@ -614,6 +616,29 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ─── COMPARING PROVIDERS? ─── */}
+      <section className="border-t bg-[#fafaf8] py-12 sm:py-16">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+            他社と比較中ですか？
+          </p>
+          <p className="mt-1 text-xs text-muted-foreground/70">
+            Comparing providers?
+          </p>
+          <h2 className="mt-4 text-xl font-bold tracking-tight sm:text-2xl text-[#1a1a2e]">
+            Skill Hunterと他の英語研修を比較
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            See how Skill Hunter compares to Berlitz, ECC, GABA, and other options.
+          </p>
+          <div className="mt-6">
+            <Button size="lg" asChild className="border border-[#1a1a2e]/20 bg-white text-[#1a1a2e] hover:bg-[#1a1a2e]/5 font-semibold text-sm px-6 h-11">
+              <a href="/compare">英語研修比較ガイド — Training Comparison Guide</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* ─── SECTION 9: FOOTER CTA ─── */}
       <section className="bg-[#1a1a2e] py-16 sm:py-24 text-white">
         <div className="mx-auto max-w-5xl px-6 text-center">
@@ -656,6 +681,11 @@ export default function Page() {
                 <li>
                   <a href="https://comedyjapanese.com" className="text-xs text-muted-foreground hover:text-foreground transition-colors" target="_blank" rel="noopener noreferrer">
                     comedyjapanese.com — 外国人スタッフの日本語学習
+                  </a>
+                </li>
+                <li>
+                  <a href="/compare" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                    英語研修比較ガイド / Training Comparison
                   </a>
                 </li>
                 <li>
