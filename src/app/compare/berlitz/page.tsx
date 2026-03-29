@@ -944,7 +944,7 @@ export default function BerlitzComparisonPage() {
               asChild
               className="border border-white/30 bg-transparent text-white hover:bg-white/10 text-base px-8 h-12"
             >
-              <a href="/#contact">
+              <a href="https://skillhunter.jp/inquiry678052" target="_blank" rel="noopener noreferrer">
                 法人のお問い合わせ Corporate Inquiry
               </a>
             </Button>

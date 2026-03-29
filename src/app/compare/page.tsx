@@ -586,7 +586,7 @@ export default function ComparePage() {
                   variant="outline"
                   className="border-[#1a1a2e] text-[#1a1a2e] hover:bg-[#1a1a2e] hover:text-white"
                 >
-                  <a href="/#contact">Corporate Inquiry</a>
+                  <a href="https://skillhunter.jp/inquiry678052" target="_blank" rel="noopener noreferrer">Corporate Inquiry</a>
                 </Button>
               </div>
             </CardContent>
@@ -693,7 +693,7 @@ export default function ComparePage() {
               asChild
               className="border border-white/30 bg-transparent text-white hover:bg-white/10 text-base px-8 h-12"
             >
-              <a href="/#contact">Corporate Inquiry</a>
+              <a href="https://skillhunter.jp/inquiry678052" target="_blank" rel="noopener noreferrer">Corporate Inquiry</a>
             </Button>
           </div>
           <p className="mt-4 text-sm text-white/40">

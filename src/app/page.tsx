@@ -78,7 +78,7 @@ export default function Page() {
                 <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">14日間無料体験 — 14-Day Free Trial</a>
               </Button>
               <Button size="lg" asChild className="border border-white/30 bg-transparent text-white hover:bg-white/10 text-base px-8 h-12">
-                <a href="#contact">法人のお問い合わせ — Corporate Inquiry</a>
+                <a href="https://skillhunter.jp/inquiry678052" target="_blank" rel="noopener noreferrer">法人のお問い合わせ — Corporate Inquiry</a>
               </Button>
             </div>
           </div>
@@ -486,7 +486,7 @@ export default function Page() {
                   Annual contract, flexible monthly seat adjustments, tiered pricing by team size. Trusted by hotels across Japan.
                 </p>
                 <Button asChild className="mt-6 w-full bg-[#1a1a2e] text-white hover:bg-[#1a1a2e]/90 h-11">
-                  <a href="#contact">法人のお問い合わせ — Inquire About Corporate Plans</a>
+                  <a href="https://skillhunter.jp/inquiry678052" target="_blank" rel="noopener noreferrer">法人のお問い合わせ — Inquire About Corporate Plans</a>
                 </Button>
               </CardContent>
             </Card>
@@ -510,26 +510,6 @@ export default function Page() {
                 </Button>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── CORPORATE INQUIRY FORM ─── */}
-      <section id="contact" className="py-16 sm:py-24">
-        <div className="mx-auto max-w-2xl px-6">
-          <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl text-[#1a1a2e]">
-            法人のお問い合わせ
-          </h2>
-          <p className="mt-2 text-center text-base text-muted-foreground">
-            Inquire about corporate plans for your hotel
-          </p>
-
-          <div className="mt-10 text-center">
-            <Button asChild className="bg-[#1a1a2e] text-white hover:bg-[#1a1a2e]/90 h-12 px-8 text-base">
-              <a href="https://skillhunter.jp/inquiry678052" target="_blank" rel="noopener noreferrer">
-                お問い合わせフォームへ — Go to Inquiry Form
-              </a>
-            </Button>
           </div>
         </div>
       </section>
