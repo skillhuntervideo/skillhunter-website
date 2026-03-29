@@ -329,6 +329,38 @@ export default function ComparePage() {
         </div>
       </section>
 
+      {/* ─── COMPARISON NAV ─── */}
+      <section className="border-b bg-white sticky top-[49px] z-40">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="flex items-center gap-1 overflow-x-auto py-3 -mx-1">
+            <a
+              href="/compare"
+              className="shrink-0 rounded-full bg-[#1a1a2e] px-4 py-2 text-xs font-semibold text-white"
+            >
+              All Providers
+            </a>
+            <a
+              href="/compare/berlitz"
+              className="shrink-0 rounded-full border border-[#1a1a2e]/15 px-4 py-2 text-xs font-medium text-[#1a1a2e] hover:bg-[#1a1a2e]/5 transition-colors"
+            >
+              vs Berlitz
+            </a>
+            <a
+              href="/compare/ecc"
+              className="shrink-0 rounded-full border border-[#1a1a2e]/15 px-4 py-2 text-xs font-medium text-[#1a1a2e] hover:bg-[#1a1a2e]/5 transition-colors"
+            >
+              vs ECC
+            </a>
+            <a
+              href="/compare/gaba"
+              className="shrink-0 rounded-full border border-[#1a1a2e]/15 px-4 py-2 text-xs font-medium text-[#1a1a2e] hover:bg-[#1a1a2e]/5 transition-colors"
+            >
+              vs GABA
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ─── WHY HOTEL ENGLISH IS DIFFERENT ─── */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-6">
