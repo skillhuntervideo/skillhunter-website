@@ -174,8 +174,10 @@ export default function ECCComparisonPage() {
                 phrase comes from real hotel operations.
               </p>
               <p className="mt-4 text-sm font-medium text-[#1a1a2e]">
-                ECC is better for general group English; Skill Hunter is better
-                for training hotel staff in practical guest communication.
+                ECC offers hotel English training through group lessons; Skill
+                Hunter delivers it through self-paced story-based immersion.
+                The difference is format, scheduling, and depth of
+                hospitality content.
               </p>
             </CardContent>
           </Card>
@@ -223,9 +225,9 @@ export default function ECCComparisonPage() {
                   },
                   {
                     label: "Content",
-                    sh: "5 hotel-specific courses",
-                    b: "General English curriculum",
-                    shWin: true,
+                    sh: "5 hotel-specific courses (story-based)",
+                    b: "Hotel English training available + general English",
+                    shWin: false,
                   },
                   {
                     label: "Delivery",
@@ -315,8 +317,8 @@ export default function ECCComparisonPage() {
           <div className="mt-10 space-y-4">
             {[
               {
-                title: "General curriculum, not hospitality",
-                desc: "ECC teaches general English and business English. Your front desk staff don't need to learn self-introductions for office meetings — they need to handle a guest whose room isn't ready.",
+                title: "Group format limits individual progress",
+                desc: "While ECC does offer hotel-specific corporate training, their group lesson format means advanced staff wait while beginners catch up. Individual progress is limited by the group pace.",
               },
               {
                 title: "Group classes require coordinating shift schedules",
@@ -446,13 +448,14 @@ export default function ECCComparisonPage() {
               <CardContent className="pt-6">
                 <h3 className="text-base font-bold text-[#1a1a2e]">ECC</h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/70">
-                  General English curriculum with some business customization
-                  available. On-site options for corporate clients. Covers
-                  conversation, grammar, and general business topics.
+                  ECC offers a dedicated hotel English training program
+                  covering front desk, restaurant, and guest service scenarios
+                  through instructor-led group lessons. On-site options for
+                  corporate clients.
                 </p>
                 <p className="mt-3 text-sm italic text-muted-foreground">
-                  Example lesson: An employee practises &ldquo;describing your
-                  weekend&rdquo; in a group exercise.
+                  Example lesson: Group role-play of a front desk check-in
+                  scenario with an instructor.
                 </p>
               </CardContent>
             </Card>
@@ -737,8 +740,8 @@ export default function ECCComparisonPage() {
                   {[
                     "You prefer group/peer learning dynamic",
                     "You want on-site instructor visits",
-                    "You need general English beyond hospitality",
-                    "You want a Japanese-headquartered provider",
+                    "You want a Japanese-headquartered provider with hotel training experience",
+                    "You need both hotel English and general English from one provider",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm">
                       <CheckCircle className="size-4 mt-0.5 text-muted-foreground shrink-0" />

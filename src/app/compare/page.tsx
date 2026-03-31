@@ -49,14 +49,16 @@ const providers = [
     tagColor: "bg-blue-600 text-white",
     bestFor: "Companies with large L&D budgets and flexible schedules",
     description:
-      "Instructor-led, general business English with decades of brand recognition. Strong methodology but not built for hospitality. Premium pricing reflects the brand, not the specialization.",
+      "Instructor-led, general business English with decades of brand recognition. Strong methodology with customizable content. Berlitz Flex offers a self-paced option. Premium pricing reflects the brand.",
     strengths: [
       "Well-known brand — easy internal approval",
       "Live instructor-led sessions",
       "Multiple locations across Japan",
+      "Berlitz Flex offers self-paced blended learning",
+      "Robust progress tracking with 10-level proficiency system",
     ],
     weaknesses: [
-      "No hotel-specific content or scenarios",
+      "Content can be customized but no dedicated hotel curriculum",
       "Fixed class schedules conflict with shift work",
       "Premium pricing (often 3-5x alternatives)",
       "Low completion rates for busy staff",
@@ -68,16 +70,17 @@ const providers = [
     tagColor: "bg-blue-600 text-white",
     bestFor: "Companies that prefer a domestic provider with group lessons",
     description:
-      "Japan-based language school offering group corporate lessons. Familiar to Japanese HR departments. Group format keeps costs lower but limits individual progress.",
+      "Japan-based language school offering group corporate lessons. Familiar to Japanese HR departments. Offers a dedicated hotel English training program. Group format keeps costs lower but limits individual progress.",
     strengths: [
       "Familiar brand for Japanese HR teams",
+      "Dedicated hotel staff English training program",
       "Group lessons keep per-person costs down",
       "Japanese-language support and contracts",
     ],
     weaknesses: [
-      "Generic business English curriculum",
       "Group pace — advanced staff wait, beginners struggle",
       "Scheduled classes don't fit hotel shift patterns",
+      "Not self-paced — requires fixed class attendance",
     ],
   },
   {
@@ -86,16 +89,17 @@ const providers = [
     tagColor: "bg-purple-600 text-white",
     bestFor: "Individual learners with consistent schedules and budgets",
     description:
-      "One-on-one lessons with native speakers. High-quality instruction for motivated individuals, but the model doesn't scale for training entire hotel teams.",
+      "One-on-one lessons with native speakers. High-quality instruction for motivated individuals with flexible booking. The model doesn't scale for training entire hotel teams.",
     strengths: [
       "True 1-on-1 instruction",
-      "Flexible lesson booking",
+      "Flexible lesson booking via myGaba",
       "High-quality instructors",
+      "Individual progress tracking through myGaba",
     ],
     weaknesses: [
       "Expensive per person — doesn't scale for teams",
       "No hospitality-specific curriculum",
-      "Individual focus — no team progress tracking",
+      "No team-level progress tracking for managers",
       "Requires commute to a GABA center",
     ],
   },
@@ -114,7 +118,7 @@ const providers = [
     weaknesses: [
       "Zero hospitality or hotel content",
       "No professional skill development",
-      "No progress tracking for managers",
+      "Individual tracking only — no manager dashboards for teams",
       "Completion rates below 5% for professional goals",
     ],
   },
@@ -142,15 +146,15 @@ const providers = [
 const comparisonRows = [
   {
     label: "Hotel-specific content",
-    values: ["yes", "no", "no", "no", "no", "maybe"],
+    values: ["yes", "maybe", "yes", "no", "no", "maybe"],
   },
   {
     label: "Self-paced",
-    values: ["yes", "no", "no", "no", "yes", "maybe"],
+    values: ["yes", "maybe", "no", "no", "yes", "maybe"],
   },
   {
     label: "Shift-friendly",
-    values: ["yes", "no", "no", "no", "yes", "maybe"],
+    values: ["yes", "no", "no", "maybe", "yes", "maybe"],
   },
   {
     label: "Scalable pricing",
@@ -158,7 +162,7 @@ const comparisonRows = [
   },
   {
     label: "Progress tracking",
-    values: ["yes", "maybe", "maybe", "no", "no", "maybe"],
+    values: ["yes", "yes", "maybe", "maybe", "maybe", "maybe"],
   },
   {
     label: "Completion rates",
@@ -166,7 +170,7 @@ const comparisonRows = [
   },
   {
     label: "Free trial",
-    values: ["yes", "no", "no", "no", "yes", "no"],
+    values: ["yes", "maybe", "maybe", "maybe", "yes", "no"],
   },
 ];
 

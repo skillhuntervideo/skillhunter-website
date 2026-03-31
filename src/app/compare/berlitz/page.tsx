@@ -223,13 +223,13 @@ export default function BerlitzComparisonPage() {
                   {
                     label: "Content",
                     sh: "100% hospitality scenarios",
-                    b: "General business English",
+                    b: "General business English (customizable by industry)",
                     shWin: true,
                   },
                   {
                     label: "Delivery",
                     sh: "Self-paced online (phone/PC)",
-                    b: "Live classes (online or in-person)",
+                    b: "Live classes + Berlitz Flex (self-paced blended)",
                     shWin: false,
                   },
                   {
@@ -259,8 +259,8 @@ export default function BerlitzComparisonPage() {
                   {
                     label: "HR dashboard",
                     sh: "Yes — progress tracking per employee",
-                    b: "Varies by contract",
-                    shWin: true,
+                    b: "My Progress dashboard + 10-level proficiency system",
+                    shWin: false,
                   },
                   {
                     label: "Hotel clients",
@@ -315,7 +315,7 @@ export default function BerlitzComparisonPage() {
             {[
               {
                 title: "Content doesn't match the job",
-                desc: "Berlitz teaches business English — boardrooms, negotiations, presentations. Your front desk staff need check-in phrases, complaint handling, and concierge recommendations. The gap between what's taught and what's needed means staff can't transfer learning to real shifts.",
+                desc: "Berlitz teaches general business English by default — boardrooms, negotiations, presentations. While content can be customized by industry, there's no pre-built hotel curriculum. Your front desk staff need check-in phrases, complaint handling, and concierge recommendations out of the box.",
               },
               {
                 title: "Scheduling around shifts is a nightmare",
@@ -443,9 +443,10 @@ export default function BerlitzComparisonPage() {
               <CardContent className="pt-6">
                 <h3 className="text-base font-bold text-[#1a1a2e]">Berlitz</h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground/70">
-                  General business English curriculum. Covers meetings,
-                  presentations, email writing, negotiation. Adaptable to
-                  different industries but not pre-built for any specific one.
+                  General business English curriculum with customization
+                  options. Covers meetings, presentations, email writing,
+                  negotiation. Can be adapted to different industries, though
+                  not pre-built specifically for hospitality.
                 </p>
                 <p className="mt-3 text-sm italic text-muted-foreground">
                   Example lesson: &ldquo;How to lead a team meeting in

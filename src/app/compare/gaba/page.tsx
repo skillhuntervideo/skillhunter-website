@@ -259,8 +259,8 @@ export default function GabaComparisonPage() {
                   },
                   {
                     label: "HR dashboard",
-                    sh: "Centralized",
-                    b: "Limited",
+                    sh: "Centralized team dashboard",
+                    b: "myGaba individual tracking (no team view)",
                     shWin: true,
                   },
                   {
@@ -323,8 +323,8 @@ export default function GabaComparisonPage() {
                 desc: "GABA lets instructors customize topics, but there's no pre-built hotel English program. Your staff's learning depends entirely on the individual instructor's ability to create relevant content. One instructor might focus on hotel scenarios; the next might default to general conversation practice.",
               },
               {
-                title: "No centralized progress tracking for HR",
-                desc: "GABA is designed for individual learners managing their own development. HR managers have limited visibility into who's progressing, what they're learning, or whether the content is relevant to hotel operations.",
+                title: "Individual tracking only — no team-level HR visibility",
+                desc: "GABA's myGaba platform tracks individual learner progress, but it's designed for the student, not for HR managers. There's no centralized dashboard showing team-wide progress, content relevance to hotel operations, or completion rates across departments.",
               },
             ].map((item, i) => (
               <Card key={i} className="border-l-4 border-l-red-400">
