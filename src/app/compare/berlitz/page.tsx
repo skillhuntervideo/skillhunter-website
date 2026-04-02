@@ -93,7 +93,7 @@ export default function BerlitzComparisonPage() {
                 2026 Updated
               </Badge>
               <Badge className="bg-[#c9a03c]/20 text-[#c9a03c] border-[#c9a03c]/30">
-                14-Day Free Trial
+                30-Day Free Trial
               </Badge>
             </div>
             <h1 className="text-3xl font-bold tracking-tight sm:text-5xl leading-tight">
@@ -252,7 +252,7 @@ export default function BerlitzComparisonPage() {
                   },
                   {
                     label: "Free trial",
-                    sh: "14 days, full access",
+                    sh: "30 days, full access",
                     b: "Single demo lesson",
                     shWin: true,
                   },
@@ -787,7 +787,7 @@ export default function BerlitzComparisonPage() {
                 step: "1",
                 period: "Week 1-2",
                 title: "Trial alongside Berlitz",
-                desc: "Start a free 14-day trial. Run Skill Hunter in parallel with your existing Berlitz contract. No disruption.",
+                desc: "Start a free 30-day trial. Run Skill Hunter in parallel with your existing Berlitz contract. No disruption.",
               },
               {
                 step: "2",
@@ -849,7 +849,7 @@ export default function BerlitzComparisonPage() {
                 label: "Real hotel scenario lessons",
               },
               {
-                stat: "14",
+                stat: "30",
                 label: "Day free trial, no credit card",
               },
             ].map((item, i) => (
@@ -887,7 +887,7 @@ export default function BerlitzComparisonPage() {
               },
               {
                 q: "How do I justify switching to my GM?",
-                a: "Show them the trial data. After 14 days, you'll have completion rates, time-on-platform, and staff feedback. Compare that against your current Berlitz attendance numbers. The data usually speaks for itself.",
+                a: "Show them the trial data. After 30 days, you'll have completion rates, time-on-platform, and staff feedback. Compare that against your current Berlitz attendance numbers. The data usually speaks for itself.",
               },
               {
                 q: "Is it cheaper than Berlitz?",
@@ -920,7 +920,7 @@ export default function BerlitzComparisonPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] opacity-90" />
         <div className="relative mx-auto max-w-5xl px-6 text-center">
           <h2 className="text-2xl font-bold tracking-tight sm:text-4xl">
-            See the Difference in 14 Days
+            See the Difference in 30 Days
           </h2>
           <p className="mt-4 text-lg text-white/60">
             Start a free trial. No credit card. No commitment. Just better

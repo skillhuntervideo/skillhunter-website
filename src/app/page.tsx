@@ -75,7 +75,7 @@ export default function Page() {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild className="bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-8 h-12">
-                <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">14日間無料体験 — 14-Day Free Trial</a>
+                <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">30日間無料体験 — 30-Day Free Trial</a>
               </Button>
               <Button size="lg" asChild className="border border-white/30 bg-transparent text-white hover:bg-white/10 text-base px-8 h-12">
                 <a href="https://skillhunter.jp/inquiry678052" target="_blank" rel="noopener noreferrer">法人のお問い合わせ — Corporate Inquiry</a>
@@ -326,6 +326,93 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ─── STATION CARD BONUS ─── */}
+      <section className="border-y bg-[#fafaf8] py-16 sm:py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="grid gap-12 sm:grid-cols-2 items-start">
+            {/* Left: copy */}
+            <div>
+              <Badge variant="secondary" className="mb-4 text-[#c9a03c] bg-[#c9a03c]/10">
+                無料特典 / Free Bonus
+              </Badge>
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-[#1a1a2e]">
+                無料体験に含まれる、すぐ使えるステーションカード4枚。
+              </h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Your free trial includes 4 printable station card cheat sheets. Real phrases your staff can use on their next shift.
+              </p>
+              <p className="mt-6 text-base leading-relaxed text-foreground/80">
+                各ステーションカードは「こう言いがち → こう言うとプロ」の形式で、ホテルの各ポジションで使える英語フレーズをまとめた1枚もの。印刷してカウンターに置くだけで、すぐに使えます。
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Each card is a one-page quick reference in &ldquo;Instead of / Say&rdquo; format, covering polished English phrases for a specific role. Print it, keep it at the station. Staff use it the same day.
+              </p>
+              <Button size="lg" asChild className="mt-8 bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-8 h-12">
+                <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">30日間無料体験を始める — Start Your 30-Day Free Trial</a>
+              </Button>
+            </div>
+
+            {/* Right: 2x2 card grid with sample phrases */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                {
+                  icon: Monitor,
+                  title: "フロントデスク",
+                  titleEn: "Front Desk",
+                  instead: "\"I don't know.\"",
+                  say: "\"Allow me to find out for you, sir.\"",
+                },
+                {
+                  icon: ConciergeBell,
+                  title: "コンシェルジュ",
+                  titleEn: "Concierge",
+                  instead: "\"It's over there.\"",
+                  say: "\"It is just a five-minute walk. May I show you on the map?\"",
+                },
+                {
+                  icon: UtensilsCrossed,
+                  title: "レストラン",
+                  titleEn: "Restaurant",
+                  instead: "\"Here's your food.\"",
+                  say: "\"Our chef has prepared the grilled miso cod for you this evening.\"",
+                },
+                {
+                  icon: UtensilsCrossed,
+                  title: "アレルギー対応",
+                  titleEn: "Allergies & Dietary",
+                  instead: "\"Any allergies?\"",
+                  say: "\"May I ask if you have any food allergies or dietary requirements, sir?\"",
+                },
+              ].map((card, i) => (
+                <Card key={i} className="border-l-2 border-l-[#c9a03c] bg-white">
+                  <CardContent className="pt-5 pb-5">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="flex size-8 items-center justify-center rounded-lg bg-[#1a1a2e] text-[#c9a03c]">
+                        <card.icon className="size-4" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-sm text-[#1a1a2e] leading-tight">{card.title}</p>
+                        <p className="text-[11px] text-muted-foreground">{card.titleEn}</p>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div>
+                        <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-wide">Instead of:</p>
+                        <p className="text-xs italic text-foreground/50 leading-relaxed">{card.instead}</p>
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-medium text-[#c9a03c] uppercase tracking-wide">Say:</p>
+                        <p className="text-xs font-medium text-foreground/90 leading-relaxed">{card.say}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── SECTION 6: SOCIAL PROOF ─── */}
       <section className="bg-[#fafaf8] py-16 sm:py-24 border-y">
         <div className="mx-auto max-w-5xl px-6">
@@ -541,10 +628,10 @@ export default function Page() {
       <section className="bg-[#1a1a2e] py-16 sm:py-24 text-white">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <h2 className="text-2xl font-bold tracking-tight sm:text-4xl">
-            まずは14日間、無料で試してみてください。
+            まずは30日間、無料で試してみてください。
           </h2>
           <p className="mt-2 text-lg text-white/60">
-            Try it free for 14 days. No commitment.
+            Try it free for 30 days. No commitment.
           </p>
           <Button size="lg" asChild className="mt-8 bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-10 h-12">
             <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">無料体験を始める — Start Your Free Trial</a>

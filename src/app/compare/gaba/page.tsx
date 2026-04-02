@@ -93,7 +93,7 @@ export default function GabaComparisonPage() {
                 2026 Updated
               </Badge>
               <Badge className="bg-[#c9a03c]/20 text-[#c9a03c] border-[#c9a03c]/30">
-                14-Day Free Trial
+                30-Day Free Trial
               </Badge>
             </div>
             <h1 className="text-3xl font-bold tracking-tight sm:text-5xl leading-tight">
@@ -253,7 +253,7 @@ export default function GabaComparisonPage() {
                   },
                   {
                     label: "Free trial",
-                    sh: "14 days full access",
+                    sh: "30 days full access",
                     b: "Trial lesson",
                     shWin: true,
                   },
@@ -856,7 +856,7 @@ export default function GabaComparisonPage() {
                 label: "Real hotel scenario lessons",
               },
               {
-                stat: "14",
+                stat: "30",
                 label: "Day free trial, no credit card",
               },
             ].map((item, i) => (
@@ -927,7 +927,7 @@ export default function GabaComparisonPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] opacity-90" />
         <div className="relative mx-auto max-w-5xl px-6 text-center">
           <h2 className="text-2xl font-bold tracking-tight sm:text-4xl">
-            See the Difference in 14 Days
+            See the Difference in 30 Days
           </h2>
           <p className="mt-4 text-lg text-white/60">
             Start a free trial. No credit card. No commitment. Just better

@@ -30,13 +30,13 @@ const providers = [
     tagColor: "bg-green-600 text-white",
     bestFor: "Hotels that want staff to actually finish the course",
     description:
-      "Story-based, hospitality-specific English courses designed for hotel staff. Five courses covering front desk, F&B, concierge, housekeeping, and phone skills. Self-paced with shift-friendly scheduling. 14-day free trial.",
+      "Story-based, hospitality-specific English courses designed for hotel staff. Five courses covering front desk, F&B, concierge, housekeeping, and phone skills. Self-paced with shift-friendly scheduling. 30-day free trial.",
     strengths: [
       "Built specifically for hotel scenarios",
       "Story-based format drives 80%+ completion rates",
       "Self-paced — works around shift schedules",
       "Scalable pricing for teams of any size",
-      "14-day free trial, no credit card required",
+      "30-day free trial, no credit card required",
     ],
     weaknesses: [
       "No live instructor sessions (by design — prioritizes scalability)",
@@ -569,7 +569,7 @@ export default function ComparePage() {
                 complete, that works around shift schedules, and that teaches
                 language they&apos;ll use on their next shift — Skill Hunter is
                 the clear choice. It&apos;s the only option built from the
-                ground up for hospitality. The 14-day free trial means you can
+                ground up for hospitality. The 30-day free trial means you can
                 test it with your team before committing.
               </p>
               <div className="mt-4 flex flex-col sm:flex-row gap-3">
@@ -582,7 +582,7 @@ export default function ComparePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Choose Skill Hunter — 14-Day Free Trial
+                    Choose Skill Hunter — 30-Day Free Trial
                   </a>
                 </Button>
                 <Button
@@ -677,7 +677,7 @@ export default function ComparePage() {
           <h2 className="text-2xl font-bold tracking-tight sm:text-4xl">
             Ready to See the Difference?
           </h2>
-          <p className="mt-2 text-lg text-white/60">14日間無料体験</p>
+          <p className="mt-2 text-lg text-white/60">30日間無料体験</p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               size="lg"
