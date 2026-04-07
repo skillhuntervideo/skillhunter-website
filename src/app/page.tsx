@@ -39,7 +39,7 @@ export default function Page() {
               ログイン
             </a>
             <Button size="sm" asChild className="bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold">
-              <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">無料体験</a>
+              <a href="/signup">無料体験</a>
             </Button>
           </div>
           <Button variant="ghost" size="icon" className="sm:hidden text-white">
@@ -75,7 +75,7 @@ export default function Page() {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild className="bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-8 h-12">
-                <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">30日間無料体験 — 30-Day Free Trial</a>
+                <a href="/signup">30日間無料体験 — 30-Day Free Trial</a>
               </Button>
               <Button size="lg" asChild className="border border-white/30 bg-transparent text-white hover:bg-white/10 text-base px-8 h-12">
                 <a href="https://skillhunter.jp/inquiry678052" target="_blank" rel="noopener noreferrer">法人のお問い合わせ — Corporate Inquiry</a>
@@ -348,7 +348,7 @@ export default function Page() {
                 Each card is a one-page quick reference in &ldquo;Instead of / Say&rdquo; format, covering polished English phrases for a specific role. Print it, keep it at the station. Staff use it the same day.
               </p>
               <Button size="lg" asChild className="mt-8 bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-8 h-12">
-                <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">30日間無料体験を始める — Start Your 30-Day Free Trial</a>
+                <a href="/signup">30日間無料体験を始める — Start Your 30-Day Free Trial</a>
               </Button>
             </div>
 
@@ -634,7 +634,7 @@ export default function Page() {
             Try it free for 30 days. No commitment.
           </p>
           <Button size="lg" asChild className="mt-8 bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-10 h-12">
-            <a href="https://skillhunter.jp/a1checkout-4-trial" target="_blank" rel="noopener noreferrer">無料体験を始める — Start Your Free Trial</a>
+            <a href="/signup">無料体験を始める — Start Your Free Trial</a>
           </Button>
           <p className="mt-4 text-sm text-white/40">
             クレジットカード不要。いつでもキャンセル可能。

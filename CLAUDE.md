@@ -39,10 +39,11 @@ npm run lint         # ESLint
 | `/compare/berlitz` | Detailed head-to-head vs Berlitz |
 | `/compare/ecc` | Detailed head-to-head vs ECC |
 | `/compare/gaba` | Detailed head-to-head vs GABA |
+| `/signup` | In-site free trial signup — embeds GHL form `X4j0pD0U3hPp3S4PZedh` |
 
 ## External Links (CTAs)
 
-- **Free trial:** `https://skillhunter.jp/a1checkout-4-trial`
+- **Free trial:** internal `/signup` page (embeds GHL form). Underlying form: `https://link.skillhunter.jp/widget/form/X4j0pD0U3hPp3S4PZedh`
 - **Corporate inquiry:** `https://skillhunter.jp/inquiry678052`
 - **Login:** `https://login.skillhunter.jp`
 - **Main platform:** `https://skillhunter.jp`

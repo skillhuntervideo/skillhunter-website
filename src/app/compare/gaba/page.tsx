@@ -66,9 +66,7 @@ export default function GabaComparisonPage() {
               className="bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold"
             >
               <a
-                href="https://skillhunter.jp/a1checkout-4-trial"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/signup"
               >
                 無料体験
               </a>
@@ -940,9 +938,7 @@ export default function GabaComparisonPage() {
               className="bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-10 h-12"
             >
               <a
-                href="https://skillhunter.jp/a1checkout-4-trial"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/signup"
               >
                 Start Your Free Trial
               </a>
