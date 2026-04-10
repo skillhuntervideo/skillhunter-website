@@ -66,30 +66,59 @@ export default function HiltonSignupPage() {
           <p className="mt-1.5 text-xs sm:text-sm text-white/50 max-w-2xl mx-auto">
             Free English training built for Hilton staff. Front desk, concierge, F&amp;B, housekeeping — 30 days free, no credit card required.
           </p>
+          <a href="#signup" className="mt-8 inline-block">
+            <Button className="bg-[#c9a03c] hover:bg-[#b8912e] text-white text-base px-8 py-3 h-auto font-semibold rounded-lg shadow-lg">
+              無料体験を始める — Start Free Trial
+            </Button>
+          </a>
         </div>
       </section>
 
       {/* ─── SOCIAL PROOF ─── */}
 
-      {/* Sub-Section A: Vendor Badge Strip */}
+      {/* Sub-Section A: Vendor Badge Strip + Client Roster */}
       <section className="bg-[#002E5E] border-t-2 border-[#c9a03c]">
         <div className="mx-auto max-w-5xl px-6 py-12 sm:py-16 flex flex-col items-center text-center gap-4">
           <BadgeCheck className="size-8 text-[#c9a03c]" aria-hidden="true" />
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#c9a03c] mb-1">
-              ヒルトン・オフィシャル認定ベンダー
-            </p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
-              Officially Signed Hilton Vendor
+              ヒルトン・オフィシャル認定ベンダー
             </h2>
+            <p className="text-sm text-white/60 italic mt-1">
+              Officially Signed Hilton Vendor
+            </p>
           </div>
-          <p className="max-w-2xl text-sm text-white/75 leading-relaxed">
-            契約手続きはヒルトン・ジャパン本部で完了済み。新規プロパティは新たな調達サイクルなしで導入できます。
+          <p className="max-w-2xl text-sm text-white/75 leading-relaxed" style={{ wordBreak: "keep-all", overflowWrap: "anywhere" }}>
+            <span style={{ display: "inline-block" }}>ヒルトン・ジャパン本部との</span><span style={{ display: "inline-block" }}>ベンダー契約は締結済み。</span><span style={{ display: "inline-block" }}>新規プロパティは</span><span style={{ display: "inline-block" }}>施設単位の簡易プロセスで</span><span style={{ display: "inline-block" }}>スムーズに導入できます。</span>
             <br />
-            <span className="italic">
-              The vendor agreement is already in place at Hilton Japan HQ — new properties plug in without starting a new procurement cycle.
+            <span className="italic text-white/50">
+              The vendor agreement is already in place at Hilton Japan HQ — new properties can onboard quickly and easily through a streamlined property-level process.
             </span>
           </p>
+
+          {/* Brand family strip */}
+          <p className="text-xs text-white/40 tracking-wide mt-4">
+            Hilton &middot; DoubleTree by Hilton &middot; Conrad &middot; Waldorf Astoria &middot; Canopy by Hilton &middot; Hilton Garden Inn
+          </p>
+
+          {/* Property chip grid */}
+          <div className="flex flex-wrap justify-center gap-2 mt-2">
+            {[
+              "Hilton Hiroshima",
+              "Conrad Tokyo",
+              "DoubleTree by Hilton Okinawa Naha Shuri Castle",
+              "Waldorf Astoria Osaka",
+              "DoubleTree by Hilton Osaka Castle",
+              "Canopy by Hilton Osaka Umeda",
+              "DoubleTree by Hilton Kyoto Higashiyama",
+              "Hilton Tokyo Bay",
+              "Hilton Garden Inn Kyoto Shijo Karasuma",
+            ].map((name) => (
+              <Badge key={name} variant="outline" className="text-xs font-normal text-white/80 border-white/20 bg-white/5">
+                {name}
+              </Badge>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -110,52 +139,12 @@ export default function HiltonSignupPage() {
               </div>
             ))}
           </div>
-          <p className="mt-10 text-sm text-muted-foreground text-center max-w-2xl mx-auto leading-relaxed">
-            2022年10月、広島ヒルトンとの契約を皮切りに、現在は東京・大阪・京都・広島・沖縄の5都市で展開中です。
+          <p className="mt-10 text-sm text-muted-foreground text-center max-w-2xl mx-auto leading-relaxed" style={{ wordBreak: "keep-all", overflowWrap: "anywhere" }}>
+            <span style={{ display: "inline-block" }}>2022年10月、</span><span style={{ display: "inline-block" }}>広島ヒルトンとの契約を皮切りに、</span><span style={{ display: "inline-block" }}>現在は東京・大阪・京都・</span><span style={{ display: "inline-block" }}>広島・沖縄の</span><span style={{ display: "inline-block" }}>5都市で展開中です。</span>
             <br />
             <span className="italic">
               Started with Hilton Hiroshima in October 2022. Now running across 5 cities: Tokyo, Osaka, Kyoto, Hiroshima, and Okinawa.
             </span>
-          </p>
-        </div>
-      </section>
-
-      {/* Sub-Section C: Client Roster */}
-      <section className="bg-white py-16 sm:py-24 border-b">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#c9a03c] text-center mb-2">
-            導入中のヒルトングループ施設
-          </p>
-          <p className="text-sm text-muted-foreground text-center italic mb-8">
-            Hilton Group properties currently on Skill Hunter
-          </p>
-
-          {/* Brand family strip — text only until Andrew supplies logos */}
-          <p className="text-xs text-center text-muted-foreground tracking-wide mb-8">
-            Hilton &middot; DoubleTree by Hilton &middot; Conrad &middot; Waldorf Astoria &middot; Canopy by Hilton &middot; Hilton Garden Inn
-          </p>
-
-          {/* Property chip grid */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {[
-              "Hilton Hiroshima",
-              "Conrad Tokyo",
-              "DoubleTree by Hilton Okinawa Naha Shuri Castle",
-              "Waldorf Astoria Osaka",
-              "DoubleTree by Hilton Osaka Castle",
-              "Canopy by Hilton Osaka Umeda",
-              "DoubleTree by Hilton Kyoto Higashiyama",
-              "Hilton Tokyo Bay",
-              "Hilton Garden Inn Kyoto Shijo Karasuma",
-            ].map((name) => (
-              <Badge key={name} variant="outline" className="text-xs font-normal text-[#1a1a2e] border-[#002E5E]/20">
-                {name}
-              </Badge>
-            ))}
-          </div>
-
-          <p className="text-xs text-muted-foreground text-center mt-6 italic">
-            A growing list of Hilton Group properties training their staff with Skill Hunter.
           </p>
         </div>
       </section>
@@ -260,8 +249,8 @@ export default function HiltonSignupPage() {
         {/* Sub-Section E: Live Lectures Callout */}
         <div className="mx-auto max-w-5xl px-6 pb-16 sm:pb-24">
           <div className="max-w-2xl mx-auto border-l-2 border-[#c9a03c] pl-4 mt-12">
-            <p className="text-sm text-[#1a1a2e] leading-relaxed">
-              オンライン動画教材に加え、日本国内のヒルトングループ加盟ホテル向けに、合同ライブ英語レッスンも開催しています。
+            <p className="text-sm text-[#1a1a2e] leading-relaxed" style={{ wordBreak: "keep-all", overflowWrap: "anywhere" }}>
+              <span style={{ display: "inline-block" }}>オンライン動画教材に加え、</span><span style={{ display: "inline-block" }}>日本国内の</span><span style={{ display: "inline-block" }}>ヒルトングループ加盟ホテル向けに、</span><span style={{ display: "inline-block" }}>合同ライブ英語レッスンも</span><span style={{ display: "inline-block" }}>開催しています。</span>
             </p>
             <p className="text-xs text-muted-foreground italic mt-1 leading-relaxed">
               On top of the platform, Skill Hunter runs live group English lectures for Hilton properties across Japan — so your staff learns together.
@@ -271,7 +260,7 @@ export default function HiltonSignupPage() {
       </section>
 
       {/* ─── FORM ─── */}
-      <section className="bg-gradient-to-b from-[#fafaf8] to-white pb-20 sm:pb-28">
+      <section id="signup" className="bg-gradient-to-b from-[#fafaf8] to-white pb-20 sm:pb-28 scroll-mt-16">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 -mt-12 sm:-mt-16">
           <div className="relative overflow-hidden rounded-2xl bg-white shadow-2xl shadow-[#002E5E]/20 ring-1 ring-black/5">
             {/* Hilton blue accent bar */}
