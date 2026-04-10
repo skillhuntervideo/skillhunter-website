@@ -26,9 +26,18 @@ The public-facing marketing website for Skill Hunter — a story-based English l
 npm run dev          # Local dev server
 npm run build        # Static export to out/
 npm run setup        # First-time: clone + install on VPS
-npm run deploy       # Push → pull on VPS → build → deploy to /var/www/hotels/
+npm run deploy       # Push → pull on VPS → build → deploy to /var/www/hotels/ (BROKEN — see below)
 npm run lint         # ESLint
 ```
+
+**Deploy workaround:** `npm run deploy` OOM-kills on the VPS during `next build`. Use local build + rsync instead:
+
+```bash
+npm run build
+rsync -az --delete out/ root@192.227.184.217:/var/www/hotels/
+```
+
+Remember to `git push origin main` separately so the VPS repo stays in sync.
 
 ## Routes
 
