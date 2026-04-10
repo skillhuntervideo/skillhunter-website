@@ -50,11 +50,17 @@ export default function SignupPage() {
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-[#c9a03c]">
             Skill Hunter
           </p>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl leading-tight">
-            <span className="text-[#c9a03c]">30日間</span>無料体験
+          <h1 className="text-3xl font-bold tracking-tight sm:text-5xl leading-tight" style={{ wordBreak: "keep-all", overflowWrap: "anywhere" }}>
+            <span style={{ display: "inline-block" }}>ホテル現場で使える</span><span style={{ display: "inline-block" }}>英語トレーニング</span>
           </h1>
-          <p className="mt-5 text-base sm:text-lg text-white/70">
-            ホテル現場で使える英語を、今日から。
+          <p className="mt-2 text-lg sm:text-xl font-semibold text-white/90">
+            Story-Based English for Hotel Staff
+          </p>
+          <p className="mt-5 text-sm sm:text-base text-white/65 max-w-xl mx-auto" style={{ wordBreak: "keep-all", overflowWrap: "anywhere" }}>
+            <span style={{ display: "inline-block" }}>フロント、レストラン、</span><span style={{ display: "inline-block" }}>電話対応 —</span> <span style={{ display: "inline-block" }}>300名以上が受講中の</span><span style={{ display: "inline-block" }}>ストーリー型オンラインコース。</span><span style={{ display: "inline-block" }}>スマホでもPCでも、</span><span style={{ display: "inline-block" }}>いつでも学べます。</span>
+          </p>
+          <p className="mt-1.5 text-xs sm:text-sm text-white/45 max-w-xl mx-auto">
+            Front desk, restaurant, phone — 300+ students learning through story-based lessons. Any device, any time.
           </p>
         </div>
       </section>
