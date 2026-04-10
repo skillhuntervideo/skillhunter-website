@@ -74,11 +74,10 @@ export default function HiltonSignupPage() {
             {/* Hilton blue accent bar */}
             <div className="h-1.5 w-full bg-gradient-to-r from-[#002E5E] via-[#0057B8] to-[#002E5E]" />
             <div className="px-2 sm:px-4 pt-4 pb-2">
-              {/* TODO: Replace form ID with Hilton-specific form once created in CC360 */}
-              <iframe
-                src="https://link.skillhunter.jp/widget/form/X4j0pD0U3hPp3S4PZedh"
+                <iframe
+                src="https://link.skillhunter.jp/widget/form/8gpL8YrMqwIktyCl8bov"
                 style={{ width: "100%", border: "none", borderRadius: "3px", display: "block" }}
-                id="inline-X4j0pD0U3hPp3S4PZedh"
+                id="inline-8gpL8YrMqwIktyCl8bov"
                 data-layout="{'id':'INLINE'}"
                 data-trigger-type="alwaysShow"
                 data-trigger-value=""
@@ -86,12 +85,12 @@ export default function HiltonSignupPage() {
                 data-activation-value=""
                 data-deactivation-type="neverDeactivate"
                 data-deactivation-value=""
-                data-form-name="Hilton Trial Signup"
-                data-height="1156"
-                data-layout-iframe-id="inline-X4j0pD0U3hPp3S4PZedh"
-                data-form-id="X4j0pD0U3hPp3S4PZedh"
-                title="Hilton Trial Signup"
-                height={1156}
+                data-form-name="Free 30 day trial HILTON (Lewis)"
+                data-height="1120"
+                data-layout-iframe-id="inline-8gpL8YrMqwIktyCl8bov"
+                data-form-id="8gpL8YrMqwIktyCl8bov"
+                title="Free 30 day trial HILTON (Lewis)"
+                height={1120}
               />
             </div>
           </div>
