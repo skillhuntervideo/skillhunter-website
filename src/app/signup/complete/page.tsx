@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Mail, Menu } from "lucide-react";
+import { CheckCircle, Clock, Mail, Menu } from "lucide-react";
 
 export const metadata = {
   title: "登録完了 — Signup Complete | Skill Hunter",
@@ -60,10 +60,22 @@ export default function SignupCompletePage() {
               <Mail className="mt-1 size-5 text-[#c9a03c] shrink-0" />
               <div>
                 <p className="text-sm sm:text-base text-white/80">
-                  まもなく <span className="text-white font-medium">andrew@skillhunter.jp</span> よりご案内メールをお送りします。届かない場合は迷惑メールフォルダをご確認ください。
+                  まもなく <span className="text-white font-medium">andrew@skillhunter.jp</span> よりご案内メールをお送りします。
                 </p>
                 <p className="mt-1.5 text-xs sm:text-sm text-white/55">
-                  You'll receive an invite email shortly from andrew@skillhunter.jp. If it doesn't arrive within 10 minutes, check your spam folder.
+                  You'll receive an invite email shortly from andrew@skillhunter.jp.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start rounded-lg border border-[#c9a03c]/30 bg-[#c9a03c]/10 px-4 py-3">
+              <Clock className="mt-0.5 size-5 text-[#c9a03c] shrink-0" />
+              <div>
+                <p className="text-sm sm:text-base text-white font-medium">
+                  10分経っても届かない場合は、迷惑メールフォルダをご確認ください。
+                </p>
+                <p className="mt-1 text-xs sm:text-sm text-white/70">
+                  If it doesn't arrive within 10 minutes, please check your spam folder.
                 </p>
               </div>
             </div>
@@ -79,14 +91,6 @@ export default function SignupCompletePage() {
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className="mt-12">
-            <Button size="lg" asChild className="bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold">
-              <a href="https://login.skillhunter.jp" target="_blank" rel="noopener noreferrer">
-                ログインページへ — Go to Login
-              </a>
-            </Button>
           </div>
         </div>
       </section>
