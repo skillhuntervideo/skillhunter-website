@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ComparisonWidget } from "@/components/shared/comparison-widget";
 import {
   Monitor,
   Phone,
@@ -34,6 +35,9 @@ export default function Page() {
             </a>
             <a href="#plans" className="text-sm text-white/60 hover:text-white transition-colors">
               プラン
+            </a>
+            <a href="#compare" className="text-sm text-white/60 hover:text-white transition-colors">
+              料金比較
             </a>
             <a href="https://login.skillhunter.jp" target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-white transition-colors">
               ログイン
@@ -545,6 +549,9 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* ─── SECTION 7.5: COST COMPARISON WIDGET ─── */}
+      <ComparisonWidget />
 
       {/* ─── SECTION 8: TWO-PATH CTA ─── */}
       <section id="plans" className="bg-[#fafaf8] py-16 sm:py-24 border-y">
