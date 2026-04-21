@@ -86,6 +86,19 @@ export default function Page() {
               Not a textbook. Not a classroom. Staff learn the way you absorb a Netflix series — by living inside the story. Every course is built around real hotel situations.
             </p>
 
+            {/* Hero pull quote — from anonymous staff survey */}
+            <div className="mt-8 border-l-2 border-[#c9a03c] pl-5 max-w-xl">
+              <p className="text-base sm:text-lg italic text-white/90 leading-snug">
+                「今まで受けてきた中で一番わかりやすい英語教材でした。」
+              </p>
+              <p className="mt-2 text-xs text-white/50">
+                — ホテルスタッフ · 匿名アンケート (2025)
+              </p>
+              <p className="text-xs italic text-white/40">
+                &ldquo;The clearest English material I&apos;ve ever used.&rdquo;
+              </p>
+            </div>
+
             {/* Pricing line — inline, lightweight */}
             <div className="mt-8 space-y-1.5">
               <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#c9a03c]">
@@ -225,50 +238,160 @@ export default function Page() {
             ))}
           </div>
 
-          {/* Before / After strip */}
-          <div className="mt-16">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-px flex-1 bg-[#1a1a2e]/10" />
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#1a1a2e]/60">
-                受講後の変化 · Before → After
+          {/* Teaser strip — forward to Voices section */}
+          <a
+            href="#voices"
+            className="mt-12 flex items-center justify-between gap-4 rounded-xl bg-[#1a1a2e] px-6 py-5 text-white transition-colors hover:bg-[#0f3460]"
+          >
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c9a03c]">
+                Next · この3つの課題への答え
               </p>
-              <span className="h-px flex-1 bg-[#1a1a2e]/10" />
+              <p className="mt-1 text-base font-bold">
+                実際の受講者 28名の声で、3つの課題に答えます。
+              </p>
+              <p className="mt-0.5 text-xs italic text-white/60">
+                Here&apos;s how 28 real learners answer each problem.
+              </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {[
-                {
-                  label: "Check-in · チェックイン",
-                  before: "\"Hi.\"",
-                  after: "\"Good afternoon. Welcome to our hotel.\"",
-                },
-                {
-                  label: "Question · 質問対応",
-                  before: "\"Wait.\"",
-                  after: "\"Allow me a moment to find the best answer.\"",
-                },
-                {
-                  label: "Busy period · 繁忙時",
-                  before: "\"Sorry, busy.\"",
-                  after: "\"I truly understand. Let me see what I can do.\"",
-                },
-              ].map((ba, i) => (
-                <div key={i} className="rounded-xl border border-[#1a1a2e]/10 bg-[#fafaf8] p-4">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#1a1a2e]/50 mb-3">
-                    {ba.label}
-                  </p>
-                  <div className="space-y-2">
+            <span className="text-3xl font-extrabold text-[#c9a03c] leading-none">→</span>
+          </a>
+        </div>
+      </section>
+
+      {/* ─── SECTION 6: SOCIAL PROOF ─── */}
+      <section id="voices" className="bg-[#fafaf8] py-16 sm:py-24 border-y">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#c9a03c]">
+            3つの課題への、現場からの答え
+          </p>
+          <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl text-[#1a1a2e] leading-tight">
+            続けられた。使えるようになった。
+            <span className="text-[#c9a03c]">成果も見えた。</span>
+          </h2>
+          <p className="mt-2 text-base text-muted-foreground">
+            Three problems. Three answers — in learners&apos; own words.
+          </p>
+
+          {/* Stats row — split by dimension, from 28-person anonymous survey */}
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            <div className="bg-white border border-[#1a1a2e]/10 rounded-lg px-5 py-4 flex items-baseline gap-3">
+              <span className="text-3xl font-extrabold text-[#c9a03c] leading-none">82%</span>
+              <div className="text-xs leading-snug">
+                <p className="font-medium text-[#1a1a2e]">満足度 4点以上</p>
+                <p className="italic text-muted-foreground">Content satisfaction 4+/5</p>
+              </div>
+            </div>
+            <div className="bg-white border border-[#1a1a2e]/10 rounded-lg px-5 py-4 flex items-baseline gap-3">
+              <span className="text-3xl font-extrabold text-[#c9a03c] leading-none">86%</span>
+              <div className="text-xs leading-snug">
+                <p className="font-medium text-[#1a1a2e]">業務で役立った 4点以上</p>
+                <p className="italic text-muted-foreground">Useful on the job 4+/5</p>
+              </div>
+            </div>
+            <div className="bg-[#1a1a2e] text-white rounded-lg px-5 py-4 flex items-baseline gap-3">
+              <span className="text-3xl font-extrabold text-[#c9a03c] leading-none">0%</span>
+              <div className="text-xs leading-snug">
+                <p className="font-medium">「教材が理由で継続しない」</p>
+                <p className="italic text-white/60">Cited content as reason to stop</p>
+              </div>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            出典：大手ホテルチェーン 28名 匿名アンケート（2025年実施）· Source: Anonymous survey, 28 staff at a major hotel chain (2025).
+          </p>
+
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {/* ANSWER 01 — Continuation */}
+            <Card className="bg-white flex flex-col border-t-2 border-t-[#c9a03c]">
+              <CardContent className="pt-6 flex flex-col flex-1">
+                <Badge className="self-start bg-[#c9a03c] text-[#1a1a2e] text-[10px] font-black tracking-[0.16em] px-2.5 py-1 hover:bg-[#c9a03c]">
+                  → 答え 01 · CONTINUATION
+                </Badge>
+                <Quote className="size-5 text-[#c9a03c] mt-4" />
+                <p className="mt-2 text-sm leading-relaxed text-foreground/90">
+                  「学んだ英語が仕事に直結するので、全くのストレスなく、楽しく続けられます。講師の方々の熱意が動画越しでも感じられ、気兼ねなく聞きやすいです。」
+                </p>
+                <p className="mt-3 text-xs text-muted-foreground leading-relaxed italic">
+                  &ldquo;The English connects directly to my work, so there&apos;s zero stress — I actually enjoy it and keep going. You can feel the teachers&apos; passion through the screen; it&apos;s easy to ask questions.&rdquo;
+                </p>
+                <div className="mt-auto pt-4">
+                  <div className="flex items-center gap-2 border-t pt-4">
+                    <div className="size-8 rounded-full bg-[#c9a03c]/15 text-[#c9a03c] flex items-center justify-center font-bold text-sm">A</div>
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-wide text-[#1a1a2e]/40">Before</p>
-                      <p className="text-sm italic text-[#1a1a2e]/50">{ba.before}</p>
-                    </div>
-                    <div className="text-[#c9a03c] text-center leading-none">↓</div>
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-wide text-[#c9a03c]">After</p>
-                      <p className="text-sm font-medium text-[#1a1a2e]">{ba.after}</p>
+                      <p className="text-sm font-medium">ホテルスタッフ A</p>
+                      <p className="text-xs text-muted-foreground">Hotel staff · 匿名アンケート</p>
                     </div>
                   </div>
                 </div>
-              ))}
+              </CardContent>
+            </Card>
+
+            {/* ANSWER 02 — On-the-job */}
+            <Card className="bg-white flex flex-col border-t-2 border-t-[#c9a03c]">
+              <CardContent className="pt-6 flex flex-col flex-1">
+                <Badge className="self-start bg-[#c9a03c] text-[#1a1a2e] text-[10px] font-black tracking-[0.16em] px-2.5 py-1 hover:bg-[#c9a03c]">
+                  → 答え 02 · ON-THE-JOB USE
+                </Badge>
+                <Quote className="size-5 text-[#c9a03c] mt-4" />
+                <p className="mt-2 text-sm leading-relaxed text-foreground/90">
+                  「よく使う英語のフレーズを、目と耳と声で、身体に染み込ませることができました。ゲストからの英語の質問に素早く反応できています。」
+                </p>
+                <p className="mt-3 text-xs text-muted-foreground leading-relaxed italic">
+                  &ldquo;Eyes, ears, voice — the phrases sink into my body. I now respond to guests&apos; English questions instantly.&rdquo;
+                </p>
+                <div className="mt-auto pt-4">
+                  <div className="flex items-center gap-2 border-t pt-4">
+                    <div className="size-8 rounded-full bg-[#c9a03c]/15 text-[#c9a03c] flex items-center justify-center font-bold text-sm">B</div>
+                    <div>
+                      <p className="text-sm font-medium">ホテルスタッフ B</p>
+                      <p className="text-xs text-muted-foreground">Hotel staff · 匿名アンケート</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* ANSWER 03 — Measurable (dark navy) */}
+            <Card className="flex flex-col bg-[#1a1a2e] text-white border-t-2 border-t-[#c9a03c] sm:col-span-2 lg:col-span-1">
+              <CardContent className="pt-6 flex flex-col flex-1">
+                <Badge className="self-start bg-[#c9a03c] text-[#1a1a2e] text-[10px] font-black tracking-[0.16em] px-2.5 py-1 hover:bg-[#c9a03c]">
+                  → 答え 03 · MEASURABLE
+                </Badge>
+                <div className="mt-4 flex items-baseline gap-3">
+                  <span className="text-3xl font-extrabold text-[#c9a03c] leading-none">英検 3級+</span>
+                  <div className="text-xs text-white/70 leading-snug">
+                    <p>A1コース修了時の到達目安</p>
+                    <p className="italic">Eiken Grade 3+ at A1 completion</p>
+                  </div>
+                </div>
+                <div className="mt-4 pt-4 border-t border-white/15">
+                  <p className="text-sm leading-relaxed">
+                    「英語で会話をする事に対して恐怖感を抱かず、少しではあるが会話できるようになった。」
+                  </p>
+                  <p className="mt-2 text-xs italic text-white/60 leading-relaxed">
+                    &ldquo;No more fear of speaking English. I can actually have conversations now.&rdquo;
+                  </p>
+                  <p className="mt-3 text-xs text-white/50">
+                    — ホテルスタッフ C · 大手ホテルチェーン 28名アンケート (2025)
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Community screenshot */}
+          <div className="mt-12 rounded-xl overflow-hidden border shadow-sm">
+            <img
+              src="/images/point_03.jpg"
+              alt="Skill Hunter community — Q&A with students and instructors"
+              className="w-full"
+            />
+            <div className="bg-white px-6 py-4">
+              <p className="text-sm font-medium text-[#1a1a2e]">コミュニティサポート</p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Students interact directly with instructors — questions get answered, progress gets supported.
+              </p>
             </div>
           </div>
         </div>
@@ -572,111 +695,6 @@ export default function Page() {
       </section>
 
 
-
-      {/* ─── SECTION 6: SOCIAL PROOF ─── */}
-      <section className="bg-[#fafaf8] py-16 sm:py-24 border-y">
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-[#1a1a2e]">
-            ホテルスタッフの声
-          </h2>
-          <p className="mt-2 text-base text-muted-foreground">
-            Voices from the people using it.
-          </p>
-
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
-            {/* Testimonial 1 */}
-            <Card className="bg-white flex flex-col">
-              <CardContent className="pt-6 flex flex-col flex-1">
-                <Quote className="size-6 text-[#c9a03c] mb-3" />
-                <p className="text-sm leading-relaxed text-foreground/90">
-                  「難しくて途中でやめてしまうことが多かったけど、このコースは続けられました。気づいたら英語が出てくるようになっていて、自分でもびっくりしています。」
-                </p>
-                <p className="mt-3 text-xs text-muted-foreground leading-relaxed italic">
-                  &ldquo;Most English courses I&apos;ve tried, I quit halfway through. This one I actually finished. Then started again. I&apos;m genuinely surprised at how naturally the words come out now.&rdquo;
-                </p>
-                <div className="mt-auto pt-4">
-                  <div className="flex items-center gap-2 border-t pt-4">
-                    <img
-                      src="/images/airi_avatar.jpg"
-                      alt="Airi"
-                      className="size-8 rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="text-sm font-medium">Airi</p>
-                      <p className="text-xs text-muted-foreground">20代 / Individual learner</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Testimonial 2 */}
-            <Card className="bg-white flex flex-col">
-              <CardContent className="pt-6 flex flex-col flex-1">
-                <Quote className="size-6 text-[#c9a03c] mb-3" />
-                <p className="text-sm leading-relaxed text-foreground/90">
-                  「教科書っぽくなくて、自然に英語が頭に入ってくる感じがします。仕事でも少しずつ英語を使えるようになってきました。」
-                </p>
-                <p className="mt-3 text-xs text-muted-foreground leading-relaxed italic">
-                  &ldquo;It doesn&apos;t feel like studying. The English just goes in. I&apos;ve started using it at work — small things, but real things. That hasn&apos;t happened with anything else I&apos;ve tried.&rdquo;
-                </p>
-                <div className="mt-auto pt-4">
-                  <div className="flex items-center gap-2 border-t pt-4">
-                    <img
-                      src="/images/naoki_avatar.jpg"
-                      alt="Naoki"
-                      className="size-8 rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="text-sm font-medium">Naoki</p>
-                      <p className="text-xs text-muted-foreground">30代 / Individual learner</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Testimonial 3 — Chihiro from old site */}
-            <Card className="bg-white sm:col-span-2">
-              <CardContent className="pt-6">
-                <Quote className="size-6 text-[#c9a03c] mb-3" />
-                <p className="text-sm leading-relaxed text-foreground/90">
-                  「クスッと笑える動画を見ながら楽しく英語力を伸ばすことができる一押しのコンテンツです。分からない語句や言い回しの質疑応答も丁寧で、サポート体制もバッチリ！」
-                </p>
-                <p className="mt-3 text-xs text-muted-foreground leading-relaxed italic">
-                  &ldquo;A top-recommended platform where you can enjoy improving your English while watching videos that make you chuckle. The Q&amp;A on unclear phrases is thorough, and the support system is great!&rdquo;
-                </p>
-                <div className="mt-4 flex items-center gap-2 border-t pt-4">
-                  <img
-                    src="/images/chihiro_avatar.jpg"
-                    alt="Chihiro F."
-                    className="size-8 rounded-full object-cover"
-                  />
-                  <div>
-                    <p className="text-sm font-medium">Chihiro F.</p>
-                    <p className="text-xs text-muted-foreground">ホテル・スタッフ / Hotel Staff</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Community screenshot */}
-          <div className="mt-12 rounded-xl overflow-hidden border shadow-sm">
-            <img
-              src="/images/point_03.jpg"
-              alt="Skill Hunter community — Q&A with students and instructors"
-              className="w-full"
-            />
-            <div className="bg-white px-6 py-4">
-              <p className="text-sm font-medium text-[#1a1a2e]">コミュニティサポート</p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Students interact directly with instructors — questions get answered, progress gets supported.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ─── SECTION 7: MEET THE TEAM ─── */}
       <section id="about" className="py-16 sm:py-24">
