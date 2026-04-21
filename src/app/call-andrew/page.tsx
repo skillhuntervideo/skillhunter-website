@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function CallAndrewPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white overflow-x-hidden">
       <CallTracker />
 
       {/* ─── NAV ─── */}
@@ -48,24 +48,28 @@ export default function CallAndrewPage() {
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden bg-[#1a1a2e] text-white">
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] opacity-90" />
-        <div className="relative mx-auto max-w-5xl px-6 pt-16 pb-20 sm:pt-20 sm:pb-24 text-center">
-          <div className="mx-auto mb-6 h-40 w-40 overflow-hidden rounded-full ring-4 ring-[#c9a03c]/70 shadow-xl shadow-black/30">
+        <div className="relative mx-auto max-w-xl px-6 pt-14 pb-14 sm:pt-20 sm:pb-20 text-center">
+          <div className="mx-auto mb-6 h-36 w-36 sm:h-40 sm:w-40 overflow-hidden rounded-full ring-4 ring-[#c9a03c]/70 shadow-xl shadow-black/30">
             <img
               src="/images/andrew_portrait.jpg"
               alt="Andrew Gibler — Founder, Skill Hunter"
               className="h-full w-full object-cover object-top"
             />
           </div>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#c9a03c]">
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#c9a03c]">
             Andrew Gibler · Founder
           </p>
-          <h1 className="text-3xl font-bold tracking-tight sm:text-5xl leading-tight">
-            Andrewに直接電話する
+          <h1
+            className="text-2xl sm:text-4xl font-bold tracking-tight leading-tight"
+            style={{ wordBreak: "keep-all", overflowWrap: "anywhere" }}
+          >
+            <span style={{ display: "inline-block" }}>Andrewに</span>
+            <span style={{ display: "inline-block" }}>直接電話する</span>
           </h1>
-          <p className="mt-2 text-lg sm:text-xl font-semibold text-white/90">
+          <p className="mt-2 text-base sm:text-lg font-semibold text-white/90">
             Call Andrew direct
           </p>
-          <p className="mt-5 text-sm sm:text-base text-white/65">
+          <p className="mt-4 text-sm sm:text-base text-white/65">
             営業時間: 平日 10:00–18:00 JST
           </p>
           <p className="mt-1 text-xs sm:text-sm text-white/45">
@@ -75,16 +79,16 @@ export default function CallAndrewPage() {
       </section>
 
       {/* ─── PRIMARY CALL BUTTON ─── */}
-      <section className="bg-gradient-to-b from-[#fafaf8] to-white pb-20 sm:pb-28">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 -mt-12 sm:-mt-14">
+      <section className="relative bg-gradient-to-b from-[#fafaf8] to-white pt-10 pb-16 sm:pt-14 sm:pb-24">
+        <div className="mx-auto max-w-sm sm:max-w-md px-6">
           <a
             href="tel:+819053732354"
-            className="block rounded-2xl bg-[#c9a03c] px-6 py-8 sm:py-10 text-center text-[#1a1a2e] shadow-2xl shadow-[#c9a03c]/40 ring-1 ring-[#1a1a2e]/10 transition-transform hover:bg-[#d4af50] active:scale-[0.98]"
+            className="block rounded-2xl bg-[#c9a03c] px-3 py-7 sm:px-6 sm:py-9 text-center text-[#1a1a2e] shadow-2xl shadow-[#c9a03c]/40 ring-1 ring-[#1a1a2e]/10 transition-transform hover:bg-[#d4af50] active:scale-[0.98]"
           >
-            <span className="block text-base font-semibold uppercase tracking-[0.18em]">
+            <span className="block text-sm font-semibold uppercase tracking-[0.18em]">
               📞 タップして電話
             </span>
-            <span className="mt-2 block text-3xl sm:text-4xl font-extrabold tracking-tight tabular-nums">
+            <span className="mt-3 block text-xl sm:text-4xl font-extrabold tracking-tight tabular-nums whitespace-nowrap">
               +81 90-5373-2354
             </span>
             <span className="mt-1 block text-xs font-medium opacity-70">
@@ -101,7 +105,7 @@ export default function CallAndrewPage() {
               Book a Zoom chat
             </Link>
           </p>
-          <p className="mt-2 text-center text-sm text-[#1a1a2e]/50">
+          <p className="mt-2 text-center text-sm text-[#1a1a2e]/50" style={{ wordBreak: "break-all" }}>
             メール:{" "}
             <a
               href="mailto:andrew.gibler@skillhunter.jp"
