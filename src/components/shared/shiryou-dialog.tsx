@@ -23,7 +23,7 @@ type Props = {
   className?: string;
 };
 
-const SHIRYOU_URL = "/shiryou.pdf";
+const SHIRYOU_URL = "/スキルハンター_サービス資料.pdf";
 
 export function ShiryouDialog({
   label = "資料ダウンロード — Download Brochure",

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import SignupForm from "./SignupForm";
 
 export const metadata = {
   title: "30日間無料体験 — Start Your Free Trial | Skill Hunter",
@@ -72,24 +73,7 @@ export default function SignupPage() {
             {/* Gold accent bar */}
             <div className="h-1.5 w-full bg-gradient-to-r from-[#c9a03c] via-[#d4af50] to-[#c9a03c]" />
             <div className="px-2 sm:px-4 pt-4 pb-2">
-              <iframe
-                src="https://link.skillhunter.jp/widget/form/X4j0pD0U3hPp3S4PZedh"
-                style={{ width: "100%", border: "none", borderRadius: "3px", display: "block" }}
-                id="inline-X4j0pD0U3hPp3S4PZedh"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Free 30 day trial (Lewis)"
-                data-height="1156"
-                data-layout-iframe-id="inline-X4j0pD0U3hPp3S4PZedh"
-                data-form-id="X4j0pD0U3hPp3S4PZedh"
-                title="Free 30 day trial (Lewis)"
-                height={1156}
-              />
+              <SignupForm />
             </div>
           </div>
           <p className="mt-6 text-center text-sm text-[#1a1a2e]/60">

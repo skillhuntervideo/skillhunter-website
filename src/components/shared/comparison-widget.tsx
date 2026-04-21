@@ -36,6 +36,21 @@ const OPTIONS: Option[] = [
     monthly: (s) => 6500 * s,
   },
   {
+    id: "generic-online-course",
+    nameJp: "一般的なオンライン英語コース",
+    nameEn: "Generic online courses",
+    blurbJp: "セルフペース型・ホテル特化ではない",
+    blurbEn: "Self-paced, generic English — not hotel-specific",
+    prosJp: ["自分のペースで学習可能", "24時間いつでもアクセス"],
+    consJp: [
+      "ホテル業務に必要な英語ではない",
+      "一般英語のみ（接客・予約対応などに直結しない）",
+      "完了率が低い（モチベーション維持が難しい）",
+    ],
+    perPerson: () => 9800,
+    monthly: (s) => 9800 * s,
+  },
+  {
     id: "in-person-group",
     nameJp: "対面グループレッスン",
     nameEn: "In-person group lessons",
@@ -52,21 +67,6 @@ const OPTIONS: Option[] = [
     monthly: (s) => 13000 * s,
     footnoteJp: "目安：1レッスン¥30,000/週1回/10名グループ換算",
     footnoteEn: "Assumes ¥30,000/lesson, weekly, groups of 10",
-  },
-  {
-    id: "generic-online-course",
-    nameJp: "一般的なオンライン英語コース",
-    nameEn: "Generic online courses",
-    blurbJp: "セルフペース型・ホテル特化ではない",
-    blurbEn: "Self-paced, generic English — not hotel-specific",
-    prosJp: ["自分のペースで学習可能", "24時間いつでもアクセス"],
-    consJp: [
-      "ホテル業務に必要な英語ではない",
-      "一般英語のみ（接客・予約対応などに直結しない）",
-      "完了率が低い（モチベーション維持が難しい）",
-    ],
-    perPerson: () => 9800,
-    monthly: (s) => 9800 * s,
   },
   {
     id: "skill-hunter",
@@ -151,11 +151,11 @@ export function ComparisonWidget() {
             className="mt-4 w-full accent-[#c9a03c]"
             aria-label="Staff count slider"
           />
-          <div className="mt-1 flex justify-between text-[10px] text-[#1a1a2e]/50">
-            <span>5</span>
-            <span>100</span>
-            <span>250</span>
-            <span>500+</span>
+          <div className="mt-1 relative h-4 text-[10px] text-[#1a1a2e]/50">
+            <span className="absolute left-0 -translate-x-1/2">5</span>
+            <span className="absolute -translate-x-1/2" style={{ left: `${((100 - 5) / (500 - 5)) * 100}%` }}>100</span>
+            <span className="absolute -translate-x-1/2" style={{ left: `${((250 - 5) / (500 - 5)) * 100}%` }}>250</span>
+            <span className="absolute right-0 translate-x-1/2">500+</span>
           </div>
         </div>
 

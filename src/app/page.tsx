@@ -12,6 +12,7 @@ import {
   CheckCircle,
   Quote,
   Menu,
+  GraduationCap,
 } from "lucide-react";
 
 export default function Page() {
@@ -29,14 +30,17 @@ export default function Page() {
             <a href="#courses" className="text-sm text-white/60 hover:text-white transition-colors">
               コース
             </a>
-            <a href="#about" className="text-sm text-white/60 hover:text-white transition-colors">
-              About
-            </a>
             <a href="#plans" className="text-sm text-white/60 hover:text-white transition-colors">
               プラン
             </a>
             <a href="#compare" className="text-sm text-white/60 hover:text-white transition-colors">
               料金比較
+            </a>
+            <a href="#contact" className="text-sm text-white/60 hover:text-white transition-colors">
+              お問い合わせ
+            </a>
+            <a href="#about" className="text-sm text-white/60 hover:text-white transition-colors">
+              チーム
             </a>
             <a href="https://login.skillhunter.jp" target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-white transition-colors">
               ログイン
@@ -83,16 +87,22 @@ export default function Page() {
             </p>
 
             {/* Pricing line — inline, lightweight */}
-            <div className="mt-8 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-white/80">
-              <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#c9a03c]">
-                1ホテル定額
-              </span>
-              <span className="text-2xl sm:text-3xl font-light text-[#c9a03c]">
-                ¥49,000<span className="text-sm text-white/50">/月〜</span>
-              </span>
-              <span className="text-xs text-white/50">
-                （税別）· 人数無制限 · 追加料金なし
-              </span>
+            <div className="mt-8 space-y-1.5">
+              <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#c9a03c]">
+                1ホテル定額 / Flat rate per hotel
+              </div>
+              <div className="flex flex-wrap items-baseline gap-x-3 text-white/80">
+                <span className="text-3xl sm:text-4xl font-light text-[#c9a03c]">
+                  ¥49,000〜
+                </span>
+                <span className="text-sm text-white/60">/ 月（税別）</span>
+              </div>
+              <div className="text-sm text-white/80">
+                1ホテル定額 · 人数無制限 · 追加料金なし
+              </div>
+              <div className="text-xs text-white/50">
+                Flat rate per hotel · Unlimited staff · No per-seat fees
+              </div>
             </div>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -285,8 +295,8 @@ export default function Page() {
             {/* Instructor screenshot */}
             <div className="hidden sm:block">
               <img
-                src="/images/point_02.jpg"
-                alt="Skill Hunter lesson — speaking time"
+                src="/images/skillhunter_top.jpg"
+                alt="Skill Hunter cast"
                 className="rounded-xl border border-white/10 shadow-2xl"
               />
             </div>
@@ -358,265 +368,201 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── SECTION 5: COURSE TRACKS ─── */}
-      <section id="courses" className="py-16 sm:py-24">
+      {/* ─── COURSE JOURNEY (unified: flow + content) ─── */}
+      <section id="courses" className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="max-w-3xl">
-            <h2 className="text-xl font-bold tracking-tight sm:text-2xl text-[#1a1a2e]">
-              現場で使える英語を。スタッフが自信を持って対応できるようになる、全5コース。
+          {/* Intro */}
+          <div className="text-center max-w-3xl mx-auto">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#c9a03c]">
+              学習の流れ と コース内容 / The Journey
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-5xl text-[#1a1a2e] leading-tight">
+              ゼロから、<span className="text-[#c9a03c]">現場で使える英語</span>まで。
             </h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Your staff will handle real situations with confidence — from check-in to check-out and everything in between.
+            <p className="mt-4 text-base sm:text-lg text-muted-foreground">
+              Every staff member follows the same clear path — from beginner to confident hotel professional. Each stage uses real courses with measurable milestones.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                icon: Monitor,
-                image: "/images/course_01.jpg",
-                title: "フロントデスク",
-                titleEn: "Front Desk",
-                jp: "チェックイン・チェックアウトを英語でスムーズに対応",
-                en: "Staff handle check-in, check-out, and guest requests in English — without hesitation.",
-              },
-              {
-                icon: UtensilsCrossed,
-                image: "/images/course_02.jpg",
-                title: "レストラン",
-                titleEn: "Restaurant",
-                jp: "英語メニューの説明、注文対応、アレルギーへの対応を自信を持って",
-                en: "From menu explanations to allergy requests, staff communicate clearly and warmly.",
-              },
-              {
-                icon: Phone,
-                image: "/images/course_03.jpg",
-                title: "電話対応",
-                titleEn: "Phone Calls",
-                jp: "予約・問い合わせ・クレームを電話で英語対応",
-                en: "Staff take reservations, handle enquiries, and manage complaints — calmly and clearly.",
-              },
-              {
-                icon: ConciergeBell,
-                image: "/images/course_04.jpg",
-                title: "コンシェルジュ",
-                titleEn: "Concierge",
-                jp: "観光案内・交通情報・おすすめスポットを英語で案内",
-                en: "Staff recommend restaurants, explain directions, and guide guests through local experiences.",
-              },
-              {
-                icon: Mail,
-                image: "/images/business_email.png",
-                title: "ビジネスメール",
-                titleEn: "Business Emails",
-                jp: "予約確認・クレーム対応・提案を英語メールで対応",
-                en: "Staff write professional English emails — reservations, complaints, follow-ups.",
-              },
-            ].map((course, i) => (
-              <Card key={i} className="group hover:shadow-md transition-shadow overflow-hidden">
-                {course.image && (
+          {/* ─── STAGE 1 ─── */}
+          <div className="mt-16">
+            <div className="max-w-3xl">
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#c9a03c]">
+                Stage 1 · ゼロから基礎へ
+              </p>
+              <h3 className="mt-2 text-xl sm:text-2xl font-bold text-[#1a1a2e] leading-tight">
+                英語初心者はここから。<span className="text-muted-foreground font-normal text-lg">/ Staff with little English start here.</span>
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/75">
+                全スタッフが共通の基礎コースからスタート。修了時には<span className="font-bold text-[#1a1a2e]">英検3級相当</span>のレベルに到達し、現場で使える英語の土台が整います。既に英語ができるスタッフはこのステージをスキップして、Stage 2 から直接始められます。
+              </p>
+              <p className="mt-1 text-xs italic text-muted-foreground leading-relaxed">
+                All beginners start here. By the end of A1, staff reach Eiken Grade 3 — the measurable foundation. Experienced staff can skip straight to Stage 2.
+              </p>
+            </div>
+
+            <div className="mt-8 grid items-stretch gap-3 sm:grid-cols-[auto_auto_1fr]">
+              {/* Start chip */}
+              <div className="rounded-xl border border-[#1a1a2e]/10 bg-[#fafaf8] flex flex-col justify-center text-center px-6 py-6 sm:min-w-[140px]">
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#1a1a2e]/50">Start</p>
+                <p className="mt-1 text-xl font-bold text-[#1a1a2e]">ゼロ</p>
+                <p className="text-[11px] italic text-[#1a1a2e]/50">Zero / Beginner</p>
+              </div>
+              {/* Arrow */}
+              <div className="flex items-center justify-center text-[#c9a03c] text-2xl font-semibold">
+                <span className="hidden sm:inline">→</span>
+                <span className="sm:hidden">↓</span>
+              </div>
+              {/* A1 Course card */}
+              <Card className="group hover:shadow-md transition-shadow overflow-hidden relative">
+                <div className="grid sm:grid-cols-[180px_1fr]">
+                  <div className="h-32 sm:h-full overflow-hidden">
+                    <img
+                      src="/images/course_a1.jpg"
+                      alt="A1 Foundation"
+                      style={{ objectPosition: "35% center" }}
+                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <CardContent className="py-5">
+                    <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#c9a03c]">
+                      Foundation · 基礎英語
+                    </p>
+                    <p className="mt-1 text-lg font-bold text-[#1a1a2e]">
+                      A1 コース <span className="text-sm font-normal text-muted-foreground">/ Basic English</span>
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground/75">
+                      日常会話・基本文法・リスニング・簡単な接客英語。修了時に英検3級レベルへ。
+                    </p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      Everyday conversation, basic grammar, listening, and simple guest interactions.
+                    </p>
+                  </CardContent>
+                </div>
+              </Card>
+            </div>
+          </div>
+
+          {/* ─── MILESTONE ─── */}
+          <div className="mt-12 rounded-2xl bg-[#c9a03c] px-6 py-8 sm:px-10 sm:py-10 text-center">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#1a1a2e]/70">
+              Milestone 達成 / Milestone Reached
+            </p>
+            <p className="mt-3 text-3xl sm:text-5xl font-black tracking-tight text-[#1a1a2e]">
+              英検 3級+
+            </p>
+            <p className="mt-1 text-base text-[#1a1a2e]/70 italic">Eiken Grade 3 or above</p>
+            <p className="mt-4 text-sm text-[#1a1a2e]/80 max-w-xl mx-auto">
+              経営陣にも説明しやすい、客観的な成果指標。次は、役割ごとの現場英語へ。
+            </p>
+            <p className="text-xs italic text-[#1a1a2e]/60 max-w-xl mx-auto">
+              A clear, objective measure you can report to leadership — and the gateway to role-specific English.
+            </p>
+          </div>
+
+          {/* ─── STAGE 2 ─── */}
+          <div className="mt-8">
+            {/* Arrow down from milestone */}
+            <div className="flex justify-center -mt-2 mb-6" aria-hidden="true">
+              <div className="flex flex-col items-center">
+                <div className="h-8 w-px bg-[#c9a03c]" />
+                <div className="text-[#c9a03c] text-2xl leading-none -mt-1">↓</div>
+              </div>
+            </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#c9a03c]">
+                Stage 2 · 現場に特化
+              </p>
+              <h3 className="mt-2 text-xl sm:text-2xl font-bold text-[#1a1a2e] leading-tight">
+                役割ごとの専門英語へ。<span className="text-muted-foreground font-normal text-lg">/ Role-specific English.</span>
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/75">
+                基礎が整ったスタッフは、自分の担当業務に直結する専門コースへ。フロントデスク、レストラン、電話対応など、現場ですぐに使えるフレーズとシチュエーションを中心に学習します。
+              </p>
+              <p className="mt-1 text-xs italic text-muted-foreground leading-relaxed">
+                Staff branch into the tracks that match their role — real hotel situations, real phrases.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  icon: Monitor,
+                  image: "/images/course_01.jpg",
+                  title: "フロントデスク",
+                  titleEn: "Front Desk",
+                  jp: "チェックイン・チェックアウトを英語でスムーズに対応",
+                  en: "Staff handle check-in, check-out, and guest requests in English — without hesitation.",
+                },
+                {
+                  icon: UtensilsCrossed,
+                  image: "/images/course_02.jpg",
+                  title: "レストラン",
+                  titleEn: "Restaurant",
+                  jp: "英語メニューの説明、注文対応、アレルギーへの対応を自信を持って",
+                  en: "From menu explanations to allergy requests, staff communicate clearly and warmly.",
+                },
+                {
+                  icon: Phone,
+                  image: "/images/course_03.jpg",
+                  title: "電話対応",
+                  titleEn: "Phone Calls",
+                  jp: "予約・問い合わせ・クレームを電話で英語対応",
+                  en: "Staff take reservations, handle enquiries, and manage complaints — calmly and clearly.",
+                },
+                {
+                  icon: ConciergeBell,
+                  image: "/images/course_04.jpg",
+                  title: "コンシェルジュ",
+                  titleEn: "Concierge",
+                  jp: "観光案内・交通情報・おすすめスポットを英語で案内",
+                  en: "Staff recommend restaurants, explain directions, and guide guests through local experiences.",
+                },
+                {
+                  icon: Mail,
+                  image: "/images/business_email.png",
+                  title: "ビジネスメール",
+                  titleEn: "Business Emails",
+                  jp: "予約確認・クレーム対応・提案を英語メールで対応",
+                  en: "Staff write professional English emails — reservations, complaints, follow-ups.",
+                },
+                {
+                  icon: GraduationCap,
+                  image: "/images/course_professional.jpg",
+                  imagePosition: "left center",
+                  isNew: true,
+                  title: "プロフェッショナル英語",
+                  titleEn: "Professional English",
+                  jp: "挨拶・対応・言葉遣いを磨き、プロとしての印象を残す",
+                  en: "Staff learn to greet warmly, respond confidently when they don't have the answer, and turn everyday moments into professional impressions.",
+                },
+              ].map((course, i) => (
+                <Card key={i} className={`group hover:shadow-md transition-shadow overflow-hidden relative ${course.isNew ? "ring-2 ring-[#c9a03c] shadow-md" : ""}`}>
+                  {course.isNew && (
+                    <span className="absolute top-3 right-3 z-10 rounded-full bg-[#c9a03c] px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-[#1a1a2e] shadow">
+                      New
+                    </span>
+                  )}
                   <div className="h-40 overflow-hidden">
                     <img
                       src={course.image}
                       alt={course.titleEn}
+                      style={course.imagePosition ? { objectPosition: course.imagePosition } : undefined}
                       className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                )}
-                <CardContent className="pt-5">
-                  <div className="flex items-center gap-3">
-                    <div className="flex size-10 items-center justify-center rounded-lg bg-[#1a1a2e] text-[#c9a03c]">
-                      <course.icon className="size-5" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-[#1a1a2e]">{course.title}</p>
-                      <p className="text-xs text-muted-foreground">{course.titleEn}</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-sm leading-relaxed text-foreground/80">
-                    {course.jp}
-                  </p>
-                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                    {course.en}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── OUTCOMES / EIKEN PATHWAY ─── */}
-      <section className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c9a03c]">
-              スタッフが到達するレベル
-            </p>
-            <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl text-[#1a1a2e] leading-tight">
-              「成果が見えない」を、
-              <br />
-              英検で<span className="text-[#c9a03c]">可視化する。</span>
-            </h2>
-            <p className="mt-2 text-base text-muted-foreground">
-              Measurable English. Measurable ROI.
-            </p>
-            <p className="mt-6 text-sm leading-relaxed text-foreground/75">
-              Skill Hunterは修了後のスタッフが<span className="font-bold text-[#1a1a2e]">英検3級相当</span>のレベルに到達することを目標に設計されています。経営陣にも説明しやすい、客観的な成果指標。
-            </p>
-          </div>
-
-          {/* Pathway */}
-          <div className="mt-10">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#1a1a2e]/50 mb-4">
-              習得の流れ · Learning Pathway
-            </p>
-            <div className="grid items-stretch gap-2 sm:grid-cols-[1fr_auto_1fr_auto_1.2fr_auto_1fr]">
-              {[
-                { jp: "ゼロ", en: "Zero / Beginner" },
-                null,
-                { jp: "A1 コース", en: "Foundation" },
-                null,
-                { jp: "英検 3級+", en: "Eiken Grade 3+", milestone: true },
-                null,
-                { jp: "ホスピタリティ中級", en: "Hospitality Intermediate" },
-              ].map((step, i) =>
-                step === null ? (
-                  <div key={i} className="flex items-center justify-center text-[#c9a03c] text-xl font-semibold">
-                    →
-                  </div>
-                ) : step.milestone ? (
-                  <div
-                    key={i}
-                    className="rounded-xl bg-[#c9a03c] text-[#1a1a2e] text-center px-4 py-5 shadow-sm"
-                  >
-                    <p className="text-[9px] font-black uppercase tracking-[0.2em]">Milestone</p>
-                    <p className="mt-1 text-lg font-black">{step.jp}</p>
-                    <p className="text-[11px] italic">{step.en}</p>
-                  </div>
-                ) : (
-                  <div
-                    key={i}
-                    className="rounded-xl border border-[#1a1a2e]/10 bg-[#fafaf8] text-center px-4 py-5"
-                  >
-                    <p className="text-sm font-bold text-[#1a1a2e]">{step.jp}</p>
-                    <p className="text-[11px] italic text-[#1a1a2e]/50 mt-1">{step.en}</p>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
-
-          {/* Two entry paths */}
-          <div className="mt-12">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#1a1a2e]/50 mb-4">
-              2つの入り口 · Two Entry Paths
-            </p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-[#1a1a2e]/10 border-l-4 border-l-[#c9a03c] bg-white p-6">
-                <p className="text-base font-bold text-[#1a1a2e]">英語初心者のスタッフ</p>
-                <p className="text-xs italic text-muted-foreground">For staff with little English</p>
-                <p className="mt-4 text-sm leading-loose text-foreground/75">
-                  <span className="font-semibold text-[#1a1a2e]">A1 コース</span>から開始 →{" "}
-                  <span className="font-semibold text-[#1a1a2e]">英検3級到達</span> →
-                  ホスピタリティ中級へ。
-                </p>
-              </div>
-              <div className="rounded-xl border border-[#1a1a2e]/10 border-l-4 border-l-[#c9a03c] bg-white p-6">
-                <p className="text-base font-bold text-[#1a1a2e]">既に英語ができるスタッフ</p>
-                <p className="text-xs italic text-muted-foreground">For experienced staff</p>
-                <p className="mt-4 text-sm leading-loose text-foreground/75">
-                  <span className="font-semibold text-[#1a1a2e]">A1 をスキップ</span>して、
-                  <span className="font-semibold text-[#1a1a2e]">中級・上級コース</span>へ直接進学可能。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── STATION CARD BONUS ─── */}
-      <section className="border-y bg-[#fafaf8] py-16 sm:py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="grid gap-12 sm:grid-cols-2 items-start">
-            {/* Left: copy */}
-            <div>
-              <Badge variant="secondary" className="mb-4 text-[#c9a03c] bg-[#c9a03c]/10">
-                無料特典 / Free Bonus
-              </Badge>
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-[#1a1a2e]">
-                無料体験に含まれる、すぐ使えるステーションカード4枚。
-              </h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Your free trial includes 4 printable station card cheat sheets. Real phrases your staff can use on their next shift.
-              </p>
-              <p className="mt-6 text-base leading-relaxed text-foreground/80">
-                各ステーションカードは「こう言いがち → こう言うとプロ」の形式で、ホテルの各ポジションで使える英語フレーズをまとめた1枚もの。印刷してカウンターに置くだけで、すぐに使えます。
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Each card is a one-page quick reference in &ldquo;Instead of / Say&rdquo; format, covering polished English phrases for a specific role. Print it, keep it at the station. Staff use it the same day.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3 items-start">
-                <Button size="lg" asChild className="bg-[#c9a03c] text-[#1a1a2e] hover:bg-[#d4af50] font-semibold text-base px-8 h-12">
-                  <a href="/signup">30日間無料体験を始める — Start Free Trial</a>
-                </Button>
-                <ShiryouDialog label="資料ダウンロード" variant="outline" size="lg" />
-              </div>
-            </div>
-
-            {/* Right: 2x2 card grid with sample phrases */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                {
-                  icon: Monitor,
-                  title: "フロントデスク",
-                  titleEn: "Front Desk",
-                  instead: "\"I don't know.\"",
-                  say: "\"Allow me to find out for you, sir.\"",
-                },
-                {
-                  icon: ConciergeBell,
-                  title: "コンシェルジュ",
-                  titleEn: "Concierge",
-                  instead: "\"It's over there.\"",
-                  say: "\"It is just a five-minute walk. May I show you on the map?\"",
-                },
-                {
-                  icon: UtensilsCrossed,
-                  title: "レストラン",
-                  titleEn: "Restaurant",
-                  instead: "\"Here's your food.\"",
-                  say: "\"Our chef has prepared the grilled miso cod for you this evening.\"",
-                },
-                {
-                  icon: UtensilsCrossed,
-                  title: "アレルギー対応",
-                  titleEn: "Allergies & Dietary",
-                  instead: "\"Any allergies?\"",
-                  say: "\"May I ask if you have any food allergies or dietary requirements, sir?\"",
-                },
-              ].map((card, i) => (
-                <Card key={i} className="border-l-2 border-l-[#c9a03c] bg-white">
-                  <CardContent className="pt-5 pb-5">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="flex size-8 items-center justify-center rounded-lg bg-[#1a1a2e] text-[#c9a03c]">
-                        <card.icon className="size-4" />
+                  <CardContent className="pt-5">
+                    <div className="flex items-center gap-3">
+                      <div className="flex size-10 items-center justify-center rounded-lg bg-[#1a1a2e] text-[#c9a03c]">
+                        <course.icon className="size-5" />
                       </div>
                       <div>
-                        <p className="font-semibold text-sm text-[#1a1a2e] leading-tight">{card.title}</p>
-                        <p className="text-[11px] text-muted-foreground">{card.titleEn}</p>
+                        <p className="font-semibold text-[#1a1a2e]">{course.title}</p>
+                        <p className="text-xs text-muted-foreground">{course.titleEn}</p>
                       </div>
                     </div>
-                    <div className="space-y-2">
-                      <div>
-                        <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-wide">Instead of:</p>
-                        <p className="text-xs italic text-foreground/50 leading-relaxed">{card.instead}</p>
-                      </div>
-                      <div>
-                        <p className="text-[11px] font-medium text-[#c9a03c] uppercase tracking-wide">Say:</p>
-                        <p className="text-xs font-medium text-foreground/90 leading-relaxed">{card.say}</p>
-                      </div>
-                    </div>
+                    <p className="mt-4 text-sm leading-relaxed text-foreground/80">{course.jp}</p>
+                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{course.en}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -624,6 +570,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+
 
       {/* ─── SECTION 6: SOCIAL PROOF ─── */}
       <section className="bg-[#fafaf8] py-16 sm:py-24 border-y">
@@ -730,29 +678,66 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── SECTION 7: ANDREW'S STORY ─── */}
+      {/* ─── SECTION 7: MEET THE TEAM ─── */}
       <section id="about" className="py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="grid gap-12 sm:grid-cols-[280px_1fr] items-start">
-            {/* Andrew photo */}
-            <div className="mx-auto sm:mx-0">
-              <img
-                src="/images/Andrew%20Conrad.JPG"
-                alt="Andrew Gibler — Skill Hunter founder"
-                className="w-64 h-auto rounded-2xl object-cover shadow-lg"
-              />
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#c9a03c]">
+              チーム紹介 / Meet the Team
+            </p>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-[#1a1a2e]">
+              The people behind Skill Hunter.
+            </h2>
+            <p className="mt-3 text-base text-muted-foreground">
+              Built by educators who actually teach — not just content producers. Hotel English, designed by the people who know it works.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 sm:grid-cols-2">
+            {/* Andrew */}
+            <div className="rounded-2xl border border-[#1a1a2e]/10 bg-white overflow-hidden shadow-sm flex flex-col">
+              <div className="h-96 overflow-hidden">
+                <img
+                  src="/images/andrew_portrait.jpg"
+                  alt="Andrew Gibler — Founder"
+                  className="h-full w-full object-cover object-top"
+                />
+              </div>
+              <div className="p-6 sm:p-8 flex-1">
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#c9a03c]">
+                  Founder · 創業者
+                </p>
+                <p className="mt-1 text-2xl font-bold text-[#1a1a2e]">Andrew Gibler</p>
+                <p className="mt-4 text-sm leading-relaxed text-foreground/85">
+                  2009年、英語だけを持って日本へ来ました。日本語はゼロ。でも4年も経たないうちに、広島東洋カープの通訳になっていました。使ったのは教科書でも語学スクールでもなく、没入型の学習——物語の中に飛び込み、自然に言語を吸収する方法です。Skill Hunterのコースは、その方法をそのまま英語学習に応用したものです。
+                </p>
+                <p className="mt-3 text-xs text-muted-foreground leading-relaxed">
+                  Moved to Japan in 2009 with zero Japanese. No language school — just immersion. Within four years, interpreting for the Hiroshima Toyo Carp in NPB professional baseball. Skill Hunter is that same method, built for hotel staff learning English.
+                </p>
+              </div>
             </div>
 
-            <div>
-              <Badge variant="secondary" className="mb-4 text-[#c9a03c] bg-[#c9a03c]/10">
-                About Andrew
-              </Badge>
-              <p className="text-base leading-relaxed text-foreground/90">
-                2009年、英語だけを持って日本へ来ました。日本語はゼロ。でも4年も経たないうちに、広島東洋カープの通訳になっていました。使ったのは教科書でも語学スクールでもなく、没入型の学習——物語の中に飛び込み、自然に言語を吸収する方法です。Skill Hunterのコースは、その方法をそのまま英語学習に応用したものです。
-              </p>
-              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                I moved to Japan in 2009 with zero Japanese. No language school — just immersion. Within four years, I was interpreting for the Hiroshima Toyo Carp in NPB professional baseball. Skill Hunter is that same method, built for hotel staff learning English. I know it works because I lived it in the other direction.
-              </p>
+            {/* David */}
+            <div className="rounded-2xl border border-[#1a1a2e]/10 bg-white overflow-hidden shadow-sm flex flex-col">
+              <div className="h-96 overflow-hidden">
+                <img
+                  src="/images/david_portrait.jpg"
+                  alt="David — Lead Instructor"
+                  className="h-full w-full object-cover object-top"
+                />
+              </div>
+              <div className="p-6 sm:p-8 flex-1">
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#c9a03c]">
+                  Lead Instructor · 講師
+                </p>
+                <p className="mt-1 text-2xl font-bold text-[#1a1a2e]">David</p>
+                <p className="mt-4 text-sm leading-relaxed text-foreground/85">
+                  大手英会話スクールで英会話の教師として勤務。一度帰国し<span className="font-semibold text-[#1a1a2e]">TESOL</span>（英語を母国語としない人に、英語を教える英語教授法）で修士を取得。日本国内の大学や企業での講師経験あり。スキルハンターではカメラマン兼主役として大活躍。
+                </p>
+                <p className="mt-3 text-xs text-muted-foreground leading-relaxed">
+                  Former English teacher at a major eikaiwa chain. Returned home to complete a Master&apos;s in TESOL. Has taught at universities and companies across Japan. At Skill Hunter, he&apos;s our cameraman and on-screen lead.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -780,29 +765,29 @@ export default function Page() {
 
           {/* Two pricing tiers */}
           <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            <div className="relative overflow-hidden rounded-2xl border-2 border-[#1a1a2e]/10 bg-white p-8">
+            <div className="relative overflow-hidden rounded-2xl border-2 border-[#c9a03c]/40 bg-[#1a1a2e] p-8 text-white shadow-lg">
               <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#c9a03c]">
                 Standard
               </p>
-              <p className="text-xs text-muted-foreground mt-1">客室 250室以下</p>
+              <p className="text-xs text-white/60 mt-1">客室 250室以下</p>
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-5xl font-light text-[#1a1a2e]">¥49,000</span>
-                <span className="text-sm text-muted-foreground">/月</span>
-              </div>
-              <p className="mt-2 text-xs text-muted-foreground">
-                (税別) · 全スタッフ込み
-              </p>
-            </div>
-            <div className="relative overflow-hidden rounded-2xl border-2 border-[#c9a03c]/40 bg-[#1a1a2e] p-8 text-white shadow-lg">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#c9a03c]">
-                Large
-              </p>
-              <p className="text-xs text-white/60 mt-1">客室 251室以上</p>
-              <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-5xl font-light text-[#c9a03c]">¥98,000</span>
+                <span className="text-5xl font-light text-[#c9a03c]">¥49,000</span>
                 <span className="text-sm text-white/50">/月</span>
               </div>
               <p className="mt-2 text-xs text-white/50">
+                (税別) · 全スタッフ込み
+              </p>
+            </div>
+            <div className="relative overflow-hidden rounded-2xl border-2 border-[#1a1a2e]/10 bg-white p-8">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#c9a03c]">
+                Large
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">客室 251室以上</p>
+              <div className="mt-4 flex items-baseline gap-1">
+                <span className="text-5xl font-light text-[#1a1a2e]">¥98,000</span>
+                <span className="text-sm text-muted-foreground">/月</span>
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">
                 (税別) · 全スタッフ込み · 人数カウントなし
               </p>
             </div>
@@ -891,29 +876,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ─── COMPARING PROVIDERS? ─── */}
-      <section className="border-t bg-[#fafaf8] py-12 sm:py-16">
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-            他社と比較中ですか？
-          </p>
-          <p className="mt-1 text-xs text-muted-foreground/70">
-            Comparing providers?
-          </p>
-          <h2 className="mt-4 text-xl font-bold tracking-tight sm:text-2xl text-[#1a1a2e]">
-            Skill Hunterと他の英語研修を比較
-          </h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            See how Skill Hunter compares to Berlitz, ECC, GABA, and other options.
-          </p>
-          <div className="mt-6">
-            <Button size="lg" asChild className="border border-[#1a1a2e]/20 bg-white text-[#1a1a2e] hover:bg-[#1a1a2e]/5 font-semibold text-sm px-6 h-11">
-              <a href="/compare">英語研修比較ガイド — Training Comparison Guide</a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* ─── SECTION 9: FOOTER CTA ─── */}
       <section className="bg-[#1a1a2e] py-16 sm:py-24 text-white">
         <div className="mx-auto max-w-5xl px-6 text-center">
@@ -938,6 +900,33 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ─── CONTACT (subtle, below main CTA) ─── */}
+      <section id="contact" className="border-t bg-[#fafaf8] py-12 sm:py-16">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
+            お問い合わせ / Contact
+          </p>
+          <h2 className="mt-3 text-xl font-bold tracking-tight sm:text-2xl text-[#1a1a2e]">
+            ご質問・ご相談はお気軽に。
+          </h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Have questions, or want to chat about a custom setup for your hotel? Get in touch.
+          </p>
+          <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+            <Button size="default" asChild className="border border-[#1a1a2e]/20 bg-white text-[#1a1a2e] hover:bg-[#1a1a2e]/5 font-semibold text-sm h-10">
+              <a href="https://skillhunter.jp/inquiry678052" target="_blank" rel="noopener noreferrer">
+                お問い合わせフォーム — Contact Form
+              </a>
+            </Button>
+            <Button size="default" asChild variant="ghost" className="text-[#1a1a2e] hover:bg-[#1a1a2e]/5 font-medium text-sm h-10">
+              <a href="mailto:andrew@skillhunter.jp">
+                andrew@skillhunter.jp
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* ─── FOOTER ─── */}
       <footer className="border-t bg-[#fafaf8] py-10">
         <div className="mx-auto max-w-5xl px-6">
@@ -959,11 +948,6 @@ export default function Page() {
                 <li>
                   <a href="https://comedyjapanese.com" className="text-xs text-muted-foreground hover:text-foreground transition-colors" target="_blank" rel="noopener noreferrer">
                     comedyjapanese.com — 外国人スタッフの日本語学習
-                  </a>
-                </li>
-                <li>
-                  <a href="/compare" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-                    英語研修比較ガイド / Training Comparison
                   </a>
                 </li>
                 <li>

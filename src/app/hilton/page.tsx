@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Menu, BadgeCheck, Quote } from "lucide-react";
+import { ComparisonWidget } from "@/components/shared/comparison-widget";
 
 export const metadata = {
   title: "ヒルトンスタッフ英語トレーニング — Free Trial | Skill Hunter × Hilton",
@@ -258,6 +259,9 @@ export default function HiltonSignupPage() {
           </div>
         </div>
       </section>
+
+      {/* ─── COST COMPARISON WIDGET ─── */}
+      <ComparisonWidget />
 
       {/* ─── FORM ─── */}
       <section id="signup" className="bg-gradient-to-b from-[#fafaf8] to-white pb-20 sm:pb-28 scroll-mt-16">
