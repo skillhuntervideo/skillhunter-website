@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ComparisonWidget } from "@/components/shared/comparison-widget";
 import { ShiryouDialog } from "@/components/shared/shiryou-dialog";
+import { HeroVideo } from "@/components/shared/hero-video";
 import {
   Monitor,
   Phone,
@@ -65,11 +66,12 @@ export default function Page() {
           className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-luminosity"
         />
         <div className="relative mx-auto max-w-5xl px-6 py-24 sm:py-32 lg:py-40">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_264px] lg:items-start">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c9a03c]">
               ホテルスタッフのための
             </p>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-5xl lg:text-6xl leading-tight">
+            <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-5xl lg:text-5xl leading-tight">
               おもてなしに
               <span className="text-[#c9a03c]">自信</span>
               がつく、
@@ -127,6 +129,11 @@ export default function Page() {
             <p className="mt-4 text-xs text-white/40">
               30日間無料 · クレジットカード不要 · 無理な勧誘なし
             </p>
+          </div>
+
+          <div className="lg:mt-8">
+            <HeroVideo />
+          </div>
           </div>
         </div>
       </section>

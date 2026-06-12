@@ -6,6 +6,7 @@ import { useState, useCallback, useEffect } from "react";
 const navLinks = [
   { label: "How It Works", labelJa: "学習の仕組み", href: "/eduprocess" },
   { label: "Courses", labelJa: "コースサンプル", href: "/eduportfolio" },
+  { label: "Contact", labelJa: "お問い合わせ", href: "/educontact" },
 ];
 
 // ─── DATA ────────────────────────────────────────────────────────────────────

@@ -7,6 +7,7 @@ const navLinks = [
   { label: "How It Works", labelJa: "学習の仕組み", href: "/eduprocess" },
   { label: "Hospitality", labelJa: "ホテル特化", href: "/edubuilt" },
   { label: "Courses", labelJa: "コースサンプル", href: "/eduportfolio" },
+  { label: "Contact", labelJa: "お問い合わせ", href: "/educontact" },
 ];
 
 export default function EduFilmPage() {
