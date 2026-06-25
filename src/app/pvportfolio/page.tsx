@@ -1,7 +1,7 @@
 "use client";
 
 import { Trophy, Lock, Play, Star, X, Menu } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 const navLinks = [
   { label: "Work", labelJa: "作品", href: "/pvportfolio" },
@@ -58,6 +58,209 @@ const verticalVideos: { id: string; title: string; youtubeId?: string; instagram
   { id: "vert-2", title: "Hilton Osaka Centrum restaurant Steak promotion", instagramUrl: "https://www.instagram.com/reel/DH-2LY6iZxF/" },
   { id: "vert-3", title: "Doubletree by Hilton Osaka Castle Pool Promotion Video", instagramUrl: "https://www.instagram.com/reel/DMg_Vi1vn7_/" },
 ];
+
+// ─── SHOWREEL ────────────────────────────────────────────────────────────────
+
+const SHOWREEL_VIDEOS = [
+  "zUoRkmIbu08",
+  "lgk_zNa_Tvg",
+  "FD8A_JPMfhc",
+  "MKMIP6NkCCA",
+  "fzOkq-jt0GU",
+  "58Klnxrmvdg",
+  "MK7GTonGUbI",
+  "OBJorL7i5yY",
+];
+const CLIP_MS = 8000;
+const CROSSFADE_MS = 800;
+
+// Two-player A/B crossfade: player B loads the next clip in the background
+// while A is playing. Once B starts playing, A fades out to reveal B.
+// This eliminates loading spinners and pause icons at cut points.
+function ShowreelHero() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const playerARef = useRef<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const playerBRef = useRef<any>(null);
+  // A is rendered on top in DOM; showingA=false makes A transparent so B shows through
+  const showingARef = useRef(true);
+  const currentIndexRef = useRef(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const transitioningRef = useRef(false);
+
+  const [showingA, setShowingA] = useState(true);
+  const [activeDot, setActiveDot] = useState(0);
+
+  const onStateChangeA = useRef<(state: number) => void>(() => {});
+  const onStateChangeB = useRef<(state: number) => void>(() => {});
+
+  const scheduleNext = useRef<() => void>(() => {});
+  const transitionTo = useRef<(targetIndex: number) => void>(() => {});
+
+  scheduleNext.current = () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(
+      () => transitionTo.current((currentIndexRef.current + 1) % SHOWREEL_VIDEOS.length),
+      CLIP_MS
+    );
+  };
+
+  transitionTo.current = (targetIndex: number) => {
+    if (transitioningRef.current) return;
+    if (timerRef.current) clearTimeout(timerRef.current);
+    transitioningRef.current = true;
+
+    const willShowA = !showingARef.current;
+    const idlePlayerRef = willShowA ? playerARef : playerBRef;
+    const idleStateChange = willShowA ? onStateChangeA : onStateChangeB;
+
+    idlePlayerRef.current?.loadVideoById(SHOWREEL_VIDEOS[targetIndex]);
+
+    let flipped = false;
+    let safetyTimer: ReturnType<typeof setTimeout>;
+
+    const doFlip = () => {
+      if (flipped) return;
+      flipped = true;
+      clearTimeout(safetyTimer);
+      idleStateChange.current = () => {};
+      showingARef.current = willShowA;
+      currentIndexRef.current = targetIndex;
+      setShowingA(willShowA);
+      setActiveDot(targetIndex);
+      setTimeout(() => {
+        transitioningRef.current = false;
+        scheduleNext.current();
+      }, CROSSFADE_MS);
+    };
+
+    idleStateChange.current = (state: number) => {
+      if (state === 1) doFlip(); // YT.PlayerState.PLAYING
+    };
+
+    // Fallback: force flip after 3s if video never fires PLAYING
+    safetyTimer = setTimeout(() => {
+      if (transitioningRef.current) doFlip();
+    }, 3000);
+  };
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const win = window as any;
+
+    const initPlayers = () => {
+      playerARef.current = new win.YT.Player("showreel-player-a", {
+        width: "100%", height: "100%",
+        videoId: SHOWREEL_VIDEOS[0],
+        playerVars: { autoplay: 1, mute: 1, controls: 0, rel: 0, modestbranding: 1, playsinline: 1, disablekb: 1, iv_load_policy: 3 },
+        events: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          onReady: (e: any) => { e.target.playVideo(); scheduleNext.current(); },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          onStateChange: (e: any) => onStateChangeA.current(e.data),
+        },
+      });
+
+      playerBRef.current = new win.YT.Player("showreel-player-b", {
+        width: "100%", height: "100%",
+        videoId: SHOWREEL_VIDEOS[0],
+        playerVars: { autoplay: 0, mute: 1, controls: 0, rel: 0, modestbranding: 1, playsinline: 1, disablekb: 1, iv_load_policy: 3 },
+        events: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          onStateChange: (e: any) => onStateChangeB.current(e.data),
+        },
+      });
+    };
+
+    if (win.YT?.Player) {
+      initPlayers();
+    } else {
+      win.onYouTubeIframeAPIReady = initPlayers;
+      if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
+        const tag = document.createElement("script");
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(tag);
+      }
+    }
+
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      playerARef.current?.destroy();
+      playerBRef.current?.destroy();
+      playerARef.current = null;
+      playerBRef.current = null;
+    };
+  }, []);
+
+  return (
+    <>
+      <style>{`
+        #showreel-player-a iframe,
+        #showreel-player-b iframe {
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100vw;
+          height: 56.25vw;
+          min-height: 100%;
+          min-width: 177.78vh;
+          pointer-events: none;
+        }
+      `}</style>
+      <section
+        className="relative overflow-hidden bg-black"
+        style={{ height: "65vh", minHeight: "320px", maxHeight: "680px" }}
+      >
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* B: always underneath */}
+          <div id="showreel-player-b" className="absolute inset-0" />
+          {/* A: always on top in DOM; opacity controls which video is visible */}
+          <div
+            id="showreel-player-a"
+            className="absolute inset-0"
+            style={{ opacity: showingA ? 1 : 0, transition: `opacity ${CROSSFADE_MS}ms ease-in-out` }}
+          />
+        </div>
+
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-b from-[#1a1a2e]/50 via-transparent to-[#1a1a2e]/90" />
+        <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-r from-[#1a1a2e]/60 via-transparent to-transparent" />
+
+        {/* Content */}
+        <div className="absolute inset-0 z-30 flex flex-col justify-end px-6 sm:px-12 pb-8 sm:pb-12">
+          <div className="mx-auto max-w-6xl w-full flex flex-col sm:flex-row sm:items-end justify-between gap-5">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c9a03c] mb-3">
+                Promotion Video Portfolio
+              </p>
+              <h1 className="text-3xl font-bold sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
+                制作<span className="text-[#c9a03c]">実績</span>
+              </h1>
+              <p className="mt-3 text-sm text-white/60 sm:text-base max-w-md">
+                A selection of promotion films and short-form content
+                created for luxury hospitality brands across Japan.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 pb-1 shrink-0">
+              {SHOWREEL_VIDEOS.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => transitionTo.current(i)}
+                  aria-label={`Clip ${i + 1}`}
+                  className="h-0.5 transition-all duration-300 cursor-pointer rounded-full"
+                  style={{
+                    width: i === activeDot ? "28px" : "14px",
+                    background: i === activeDot ? "#ffffff" : "rgba(255,255,255,0.3)",
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
 
 // ─── COMPONENTS ──────────────────────────────────────────────────────────────
 
@@ -252,30 +455,7 @@ export default function PvPortfolioPage() {
         )}
       </nav>
 
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-[#1a1a2e] text-white">
-        <img
-          src="/images/camera_crew.jpg"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-luminosity"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a2e] via-transparent to-[#1a1a2e]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e]/60 via-transparent to-[#1a1a2e]/80" />
-        <div className="relative mx-auto max-w-6xl px-6 py-16 sm:py-24 lg:py-32">
-          <div className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c9a03c] mb-4">
-              Promotion Video Portfolio
-            </p>
-            <h1 className="text-3xl font-bold sm:text-5xl lg:text-6xl tracking-tight leading-tight">
-              制作<span className="text-[#c9a03c]">実績</span>
-            </h1>
-            <p className="mt-6 text-base text-white/60 sm:text-lg">
-              A selection of promotion films and short-form content
-              created for luxury hospitality brands across Japan.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ShowreelHero />
 
       {/* ══ SECTION 1: FEATURED WORK ══════════════════════════════════════════ */}
       <section className="py-16 sm:py-24 px-6">

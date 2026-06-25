@@ -7,7 +7,7 @@ export function HeroVideo() {
   const [playing, setPlaying] = useState(false);
 
   return (
-    <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-black shadow-2xl lg:max-w-[calc(100%-0.5rem)]">
+    <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-black shadow-2xl">
       {playing ? (
         <video
           src="/videos/hero-promo.mp4"

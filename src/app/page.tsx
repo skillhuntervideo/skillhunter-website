@@ -65,16 +65,16 @@ export default function Page() {
           alt=""
           className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-luminosity"
         />
-        <div className="relative mx-auto max-w-5xl px-6 py-24 sm:py-32 lg:py-40">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_264px] lg:items-start">
+        <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32 lg:py-40">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:items-center">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c9a03c]">
               ホテルスタッフのための
             </p>
             <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-5xl lg:text-5xl leading-tight">
-              おもてなしに
-              <span className="text-[#c9a03c]">自信</span>
-              がつく、
+              <span className="whitespace-nowrap">
+                おもてなしに<span className="text-[#c9a03c]">自信</span>がつく、
+              </span>
               <br />
               楽しい英語。
             </h1>
@@ -131,7 +131,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="lg:mt-8">
+          <div className="w-full lg:translate-x-[10%] lg:-translate-y-[38px]">
             <HeroVideo />
           </div>
           </div>

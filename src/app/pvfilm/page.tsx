@@ -185,34 +185,72 @@ export default function PvFilmPage() {
         </div>
       </section>
 
-      {/* ── FEATURED WORK CTA ── */}
+      {/* ── WORK PREVIEW ── */}
+      <section className="pb-4 px-6">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex items-baseline justify-between mb-6">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Recent Work</p>
+            <a href="/pvportfolio" className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#c9a03c] hover:text-[#d4af50] transition-colors">
+              View All →
+            </a>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { id: "zUoRkmIbu08", title: "Hilton Kyoto", award: true },
+              { id: "lgk_zNa_Tvg", title: "Hilton Hiroshima" },
+              { id: "fzOkq-jt0GU", title: "DoubleTree Tokyo Ariake" },
+              { id: "OBJorL7i5yY", title: "Hilton Fukuoka" },
+            ].map((v) => (
+              <a
+                key={v.id}
+                href="/pvportfolio"
+                className="group relative block rounded-xl overflow-hidden bg-[#16213e] aspect-video"
+              >
+                <img
+                  src={`https://img.youtube.com/vi/${v.id}/hqdefault.jpg`}
+                  alt={v.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300" />
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#c9a03c]" />
+                {v.award && (
+                  <div className="absolute top-2 right-2 bg-[#c9a03c] text-[#0a0a0a] text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded">
+                    受賞作
+                  </div>
+                )}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="bg-white/15 backdrop-blur-sm border border-white/20 rounded-full p-3">
+                    <Play className="size-5 text-white fill-white" />
+                  </div>
+                </div>
+                <p className="absolute bottom-2 left-3 text-[10px] font-semibold text-white/70 leading-none">{v.title}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CONTACT CTA ── */}
       <section className="py-16 px-6">
         <div className="mx-auto max-w-6xl">
-          <a
-            href="/pvportfolio"
-            className="group relative block rounded-2xl overflow-hidden bg-[#16213e] border border-white/10 hover:border-[#c9a03c]/40 transition-all duration-300"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#c9a03c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative px-8 py-10 sm:px-12 sm:py-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#c9a03c] mb-3">
-                  Featured Work
-                </p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
-                  受賞作品を含む、
-                  <br className="sm:hidden" />
-                  映像制作実績を見る
-                </h2>
-                <p className="mt-2 text-sm text-white/45">
-                  Award-winning films · Promotion work · Short-form content
-                </p>
-              </div>
-              <div className="flex items-center gap-3 text-[#c9a03c] font-bold text-sm uppercase tracking-[0.15em] shrink-0">
-                View Portfolio
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1.5" />
-              </div>
-            </div>
-          </a>
+          <div className="rounded-2xl border border-[#c9a03c]/20 bg-[#16213e] px-8 py-12 sm:px-12 sm:py-16 text-center">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#c9a03c] mb-4">
+              Get in Touch
+            </p>
+            <h2 className="text-2xl sm:text-4xl font-bold text-white leading-tight">
+              撮影のご相談、<br className="sm:hidden" />お気軽にどうぞ。
+            </h2>
+            <p className="mt-4 text-sm text-white/50 max-w-md mx-auto leading-relaxed">
+              Promotion films, short-form content, opening events — we'd love to hear about your project.
+            </p>
+            <a
+              href="/pvcontact"
+              className="group inline-flex items-center gap-3 mt-8 bg-[#c9a03c] text-[#0a0a0a] hover:bg-[#d4af50] font-bold text-xs uppercase tracking-[0.2em] px-8 py-4 transition-all duration-200"
+            >
+              お問い合わせ
+              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
         </div>
       </section>
 
