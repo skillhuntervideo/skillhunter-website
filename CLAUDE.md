@@ -101,3 +101,11 @@ public/
 - Bilingual (Japanese + English) throughout
 - Sections use semantic IDs for anchor navigation (`#courses`, `#about`, etc.)
 - All pages are fully static — no client-side data fetching
+
+## Website workflow (agreed with Andrew, Oct 2026)
+- The source of truth is github.com/skillhuntervideo/skillhunter-website, branch main (remote "skillhuntervideo"). Do not push website changes to the Mottodigitalrice origin.
+- Before any change, run `git pull skillhuntervideo main`.
+- After a change, run `npm run build`, check the pages look right, commit, and run `git push skillhuntervideo main`. Never force-push; main is protected anyway.
+- Only deploy to the server AFTER the change is pushed to GitHub, and deploy from an up-to-date main, so the live site always matches GitHub.
+- Never re-add the hotel brand logos (Hilton, Conrad, Marriott, Waldorf, Prince, JANU) to the homepage. They were removed because we don't have permission to use them. The Hilton logo on /hilton is allowed.
+- If a file is ever uploaded straight to the server (for example a PDF in /guides), also add it to the repo under public/ and push it.
