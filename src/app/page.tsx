@@ -148,34 +148,7 @@ export default function Page() {
             Trusted by major global hotel brands
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-10 sm:gap-14">
-            {[
-              { src: "/images/logos/hilton.svg", alt: "Hilton", h: "h-5" },
-              { src: "/images/logos/conrad.svg", alt: "Conrad", h: "h-4" },
-              { type: "text", text: "JANU", alt: "Janu" },
-              { src: "/images/logos/waldorf_mark.svg", alt: "Waldorf Astoria", h: "h-10" },
-              { src: "/images/logos/marriott.svg", alt: "Marriott", h: "h-5" },
-              { src: "/images/logos/prince.svg", alt: "Prince Hotels", h: "h-5" },
-            ].map((logo) => (
-              "type" in logo && logo.type === "text" ? (
-                <span
-                  key={logo.alt}
-                  className="text-lg font-light tracking-[0.3em] text-gray-800 opacity-40"
-                >
-                  {logo.text}
-                </span>
-              ) : (
-                <img
-                  key={logo.alt}
-                  src={"src" in logo ? logo.src : ""}
-                  alt={logo.alt}
-                  className={`${"h" in logo ? logo.h : "h-5"} w-auto opacity-40 grayscale`}
-                />
-              )
-            ))}
-          </div>
-
-          <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-12">
+          <div className="mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-12">
             <div>
               <p className="text-3xl font-bold text-[#1a1a2e]">
                 11<span className="text-base font-semibold text-[#1a1a2e]/70 ml-1">ホテル</span>
