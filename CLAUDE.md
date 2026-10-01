@@ -30,14 +30,25 @@ npm run deploy       # Push → pull on VPS → build → deploy to /var/www/hot
 npm run lint         # ESLint
 ```
 
-**Deploy workaround:** `npm run deploy` OOM-kills on the VPS during `next build`. Use local build + rsync instead:
+**Deploy workaround:** `npm run deploy` OOM-kills on the VPS during `next build`. Use local build + rsync instead.
+
+**Before the rsync step:**
+1. Pull main: `git pull origin main` (origin = skillhuntervideo/skillhunter-website).
+2. Make sure your change is committed and pushed: `git status` must say "up to date with 'origin/main'" and "nothing to commit".
+3. Build: `npm run build`.
+4. Check that everything currently on the live site is in your build. A dry run lists any live file that `--delete` would remove (lines starting with `*deleting`):
+   ```bash
+   rsync -azn --delete --itemize-changes out/ root@192.227.184.217:/var/www/hotels/ | grep deleting
+   ```
+   **If something live is missing from your build, stop and ask Andrew before deploying.**
+
+Then deploy:
 
 ```bash
-npm run build
 rsync -az --delete out/ root@192.227.184.217:/var/www/hotels/
 ```
 
-Remember to `git push origin main` separately so the VPS repo stays in sync.
+Remotes: `origin` = skillhuntervideo/skillhunter-website (source of truth), `motto` = Mottodigitalrice/skillhunter-website (old, do not push website changes there).
 
 ## Routes
 
@@ -80,7 +91,7 @@ src/
     constants.ts        # APP_NAME, APP_DESCRIPTION, APP_AUTHOR
     utils.ts            # cn() utility
 public/
-  images/               # Course photos, avatars, hotel brand logos, backgrounds
+  images/               # Course photos, avatars, backgrounds. Only logo: logos/hilton_white.svg (used on /hilton only)
 ```
 
 ## Design Conventions
@@ -103,9 +114,9 @@ public/
 - All pages are fully static — no client-side data fetching
 
 ## Website workflow (agreed with Andrew, Oct 2026)
-- The source of truth is github.com/skillhuntervideo/skillhunter-website, branch main (remote "skillhuntervideo"). Do not push website changes to the Mottodigitalrice origin.
-- Before any change, run `git pull skillhuntervideo main`.
-- After a change, run `npm run build`, check the pages look right, commit, and run `git push skillhuntervideo main`. Never force-push; main is protected anyway.
+- The source of truth is github.com/skillhuntervideo/skillhunter-website, branch main (remote "origin"). Do not push website changes to the Mottodigitalrice repo (remote "motto").
+- Before any change, run `git pull origin main`.
+- After a change, run `npm run build`, check the pages look right, commit, and run `git push origin main`. Never force-push; main is protected anyway.
 - Only deploy to the server AFTER the change is pushed to GitHub, and deploy from an up-to-date main, so the live site always matches GitHub.
 - Never re-add the hotel brand logos (Hilton, Conrad, Marriott, Waldorf, Prince, JANU) to the homepage. They were removed because we don't have permission to use them. The Hilton logo on /hilton is allowed.
 - If a file is ever uploaded straight to the server (for example a PDF in /guides), also add it to the repo under public/ and push it.
